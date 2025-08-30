@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background: #000000;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* prevent scroll during loader */
+}
+
+h1 {
+  color: white;
+}

@@ -1,0 +1,12 @@
+.hov {
+  transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hov:hover {
+  background-color: #00A3A3 !important;
+  color: #FAF3E0 !important;
+}
+
+.nav-animate {
+  animation: slideDown 0.8s ease-out forwards;
+}
