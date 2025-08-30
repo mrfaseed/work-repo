@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "react":"vite",
     "dev": "vite",
     "tailwind:init": "tailwindcss init -p",
     "build": "vite build",

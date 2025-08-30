@@ -3,14 +3,49 @@
 }
 
 .hov:hover {
-  background-color: #00A3A3 !important;
+  background-color: #00809d !important;
   color: #FAF3E0 !important;
 }
 
 .nav-animate {
   animation: slideDown .5s ease-out forwards;
 }
+/* In Navbar.css */
 
+/* In Navbar.css */
+/* In Navbar.css */
+
+/* This defines the continuous forward spin */
+/* In Navbar.css - REPLACE THE OLD SPINNING LOGO RULES WITH THIS */
+
+/* The keyframes for the spin (no change here) */
+/* In Navbar.css - REPLACE the old animation rules */
+
+/* Keyframes for the slow forward spin */
+/* In Navbar.css - REPLACE the old animation rules */
+
+/* Keyframes for the forward spin */
+@keyframes spin-forward-kf {
+  to { transform: rotate(360deg); }
+}
+
+/* Keyframes for the reverse spin */
+@keyframes spin-reverse-kf {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Class for the FORWARD animation */
+.spin-forward {
+  /* This tells the animation to run for 1s, 3 times (total 3s), and then stop */
+  animation: spin-forward-kf 1s linear 1 forwards;
+}
+
+/* Class for the REVERSE animation */
+.spin-reverse {
+  /* Changed the duration from 0.8s to 3s */
+  animation: spin-reverse-kf 1.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
 @keyframes slideDown {
   from { transform: translateY(-100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
