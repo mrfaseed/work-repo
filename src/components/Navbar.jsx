@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <header className="relative w-full flex justify-center p-4 z-20">
-      <nav className="fixed top-6 z-50">
+      <nav className="fixed top-6 z-50 left-1/2 -translate-x-1/2">
         <div className="container flex items-center justify-between gap-x-6 bg-black/20 backdrop-blur-xl border border-white/10 rounded-full px-8 py-1 shadow-lg">
           
           <div className="flex-shrink-0">

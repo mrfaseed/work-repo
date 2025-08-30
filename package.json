@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "react":"vite",
+    "react": "vite",
     "dev": "vite",
     "tailwind:init": "tailwindcss init -p",
     "build": "vite build",
@@ -12,7 +12,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gsap": "^3.13.0",
     "lottie-web": "^5.13.0",
+    "ogl": "^1.0.11",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
