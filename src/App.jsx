@@ -3,7 +3,6 @@ import Animation from "./components/Animation";
 import Content from "./components/Content";
 import TextPressure from './components/TextPressure';
 import Aurora from "./components/Aurora";
-
 export default function App() {
   return (
     <div className="bg-gray-900">
@@ -46,6 +45,7 @@ export default function App() {
       {/* SECTION 2: The rest of your scrollable content starts here */}
       <Animation />
       <Content />
+      
       
     </div>
   );
