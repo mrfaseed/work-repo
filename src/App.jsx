@@ -1,15 +1,15 @@
 import Navbar from "./components/Navbar";
 import Animation from "./components/Animation";
 import Content from "./components/Content";
-import TextPressure from './components/TextPressure';
+import TextPressure from "./components/TextPressure";
 import Aurora from "./components/Aurora";
+import MembersPage from "./components/members";
+
 export default function App() {
   return (
     <div className="bg-gray-900">
-      
       {/* SECTION 1: The initial viewport with the background */}
       <section className="relative h-screen overflow-hidden">
-        
         {/* Aurora Background: 100% width, 50% height of this section */}
         <div className="absolute top-0 left-0 w-full h-1/2 z-0">
           <Aurora
@@ -39,14 +39,12 @@ export default function App() {
             />
           </div>
         </div>
-        
       </section>
 
       {/* SECTION 2: The rest of your scrollable content starts here */}
       <Animation />
       <Content />
-      
-      
+      <MembersPage />
     </div>
   );
 }

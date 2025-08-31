@@ -1,5 +1,6 @@
 import { useState } from 'react'; // 1. Import useState
 import './Navbar.css';
+import MembersPage from './members';
 
 export default function Navbar() {
   // 2. Set up state to track the animation
