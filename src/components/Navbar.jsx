@@ -1,6 +1,5 @@
-import { useState } from "react";
-import "./Navbar.css";
-import Hamburger from "./Hamburger";
+import { useState } from 'react'; // 1. Import useState
+import './Navbar.css';
 
 export default function Navbar() {
   // Logo spin animation state
