@@ -4,7 +4,8 @@ import Content from "./components/Content";
 import TextPressure from "./components/TextPressure";
 import Aurora from "./components/Aurora";
 import MembersPage from "./components/members";
-import LogoLoop from "./components/Footer";
+import LogoLoop from "./components/LogoLoop";
+import Footer from './components/Footer'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
 
 const techLogos = [
@@ -81,6 +82,7 @@ export default function App() {
           />
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
