@@ -309,7 +309,7 @@ const MembersPage = () => {
       </div>
 
       {/* Floating 3D Elements */}
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (
           <div
             key={i}

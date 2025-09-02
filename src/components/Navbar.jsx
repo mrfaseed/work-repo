@@ -25,7 +25,8 @@ export default function Navbar() {
   return (
     <header className="relative w-full flex justify-center p-4 z-20">
       <nav className="fixed top-6 z-50 left-1/2 -translate-x-1/2">
-        <div className="container flex items-center justify-between gap-x-6 bg-black/20 backdrop-blur-xl border border-white/10 rounded-full px-8 py-1 shadow-lg">
+        {/* === CHANGES ARE IN THIS DIV === */}
+        <div className="container flex items-center justify-between gap-x-6 bg-white/20 backdrop-blur-xl border border-black/10 rounded-full px-8 py-1 shadow-lg">
           
           {/* Logo with hover spin */}
           <div className="flex-shrink-0">
@@ -46,24 +47,24 @@ export default function Navbar() {
           {/* Desktop Links */}
           <ul className="hidden md:flex items-center gap-x-2">
             <li>
-              <a href="#" className="text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-300 px-4 py-2 rounded-full">Home</a>
+              <a href="#" className="text-gray-700 hover:bg-black/10 hover:text-black transition-all duration-300 px-4 py-2 rounded-full">Home</a>
             </li>
             <li>
-              <a href="#" className="text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-300 px-4 py-2 rounded-full">About</a>
+              <a href="#" className="text-gray-700 hover:bg-black/10 hover:text-black transition-all duration-300 px-4 py-2 rounded-full">About</a>
             </li>
             <li>
-              <a href="#" className="text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-300 px-4 py-2 rounded-full">Services</a>
+              <a href="#" className="text-gray-700 hover:bg-black/10 hover:text-black transition-all duration-300 px-4 py-2 rounded-full">Services</a>
             </li>
             <li>
-              <a href="#" className="text-gray-300 hover:bg-white/10 hover:text-white transition-all duration-300 px-4 py-2 rounded-full">Projects</a>
+              <a href="#" className="text-gray-700 hover:bg-black/10 hover:text-black transition-all duration-300 px-4 py-2 rounded-full">Projects</a>
             </li>
           </ul>
 
-          {/* Always-visible Hamburger */}
+          {/* Hamburger Button */}
           <div className="flex items-center gap-x-2">
             <button
               onClick={() => setIsOpen(true)}
-              className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+              className="text-gray-700 p-2 rounded-full hover:bg-black/10 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6"
                 fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+// Note: It's generally better to import CSS from a separate file.
+// import './TextPressure.css'; 
 
 const TextPressure = ({
   text = 'Compressa',
@@ -19,7 +21,7 @@ const TextPressure = ({
   strokeColor = '#FF0000',
   className = '',
 
-  minFontSize = 24,
+  minFontSize = 10,
 
 }) => {
   const containerRef = useRef(null);
@@ -152,9 +154,10 @@ const TextPressure = ({
       ref={containerRef}
       style={{
         position: 'relative',
-        width: '100%',
+        width: '80%',
         height: '100%',
         background: 'transparent',
+        margin: '0 auto',
       }}
     >
       <style>{`
@@ -197,7 +200,7 @@ const TextPressure = ({
           textTransform: 'uppercase',
           fontSize: fontSize,
           lineHeight,
-          transform: `scale(1, ${scaleY})`,
+          transform: `scale(0.97, ${scaleY})`,
           transformOrigin: 'center top',
           margin: 0,
           textAlign: 'center',

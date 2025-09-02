@@ -9,10 +9,10 @@ import Footer from './components/Footer'
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
 
 const techLogos = [
-  { node: <SiReact className="text-white" />, title: "React", href: "https://react.dev" },
-  { node: <SiNextdotjs className="text-white" />, title: "Next.js", href: "https://nextjs.org" },
-  { node: <SiTypescript className="text-white" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-  { node: <SiTailwindcss className="text-white" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiReact className="text-black" />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs className="text-black" />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript className="text-black" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss className="text-black" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
 ];
 
 
@@ -25,18 +25,18 @@ const imageLogos = [
 
 export default function App() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-white-900">
       {/* SECTION 1: The initial viewport with the background */}
       <section className="relative h-screen overflow-hidden">
         {/* Aurora Background: 100% width, 50% height of this section */}
-        <div className="absolute top-0 left-0 w-full h-1/2 z-0">
-          <Aurora
+       {/*   <div className="absolute top-0 left-0 w-full h-1/2 z-0">
+         <Aurora
             colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
             blend={1}
             amplitude={1.0}
             speed={1}
           />
-        </div>
+        </div>*/}
 
         {/* Foreground Content for the first page */}
         <div className="relative z-10 flex flex-col h-full">
@@ -51,9 +51,9 @@ export default function App() {
               width={true}
               weight={true}
               italic={true}
-              textColor="#ffffff"
+              textColor="#000000ff"
               strokeColor="#ff0000"
-              minFontSize={30}
+              minFontSize={10}
             />
           </div>
         </div>
@@ -62,7 +62,9 @@ export default function App() {
       {/* SECTION 2: The rest of your scrollable content starts here */}
       <Animation />
       <Navbar/>
+      {/* 
       <Content />
+      */}
       <MembersPage />
 
       {/* SECTION 3: Logo Loop */}
@@ -77,7 +79,7 @@ export default function App() {
             pauseOnHover
             scaleOnHover
             fadeOut
-            fadeOutColor="#111827"
+            
             ariaLabel="Technology partners"
           />
         </div>
