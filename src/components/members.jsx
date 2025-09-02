@@ -15,41 +15,51 @@ const MembersPage = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const members = [
-    {
-      id: 1,
-      name: "Jegathesaan",
-      role: "Lead AI Researcher",
-      specialization: "Machine Learning ",
-      avatar: "./images/jega_1.jpg",
-      projects: ["AI-Powered Analytics", "Neural Network Visualizer"],
-      achievements: "Published 40+ papers, IEEE Fellow",
-      experience: "8 years"
-    },
-    {
-      id: 2,
-      name: "Mohammed Faseed",
-      role: "chatGPT lover",
-      specialization: "AI & Language Models",
-      avatar:
-        "./images/faseed_1.jpg",
-      projects: ["Blockchain Identity System", "Quantum Computing Simulator"],
-      achievements: "100 + hackathons",
-      experience: "6 years"
-    },
-    {
-      id: 3,
-      name: "Mohammed shaban",
-      role: " Tech Ethusiast",
-      specialization: "React.js, Three.js",
-      avatar:
-        "./images/shaban_1.jpg",
-      projects: ["Quantum Computing Simulator", "Climate Prediction Model"],
-      achievements: "Real-time projects",
-      experience: "12 years"
-    },
-   
-  ];
+const members = [
+  {
+    id: 1,
+    name: "Jegathesaan",
+    role: "Lead AI & Hardware Engineer",
+    specialization: "AI Research, LLMs, Embedded Systems",
+    avatar: "./images/jega_1.jpg",
+    projects: [
+      "Custom LLM Development",
+      "Edge AI Hardware Acceleration",
+      "Iot Projects"
+    ],
+    achievements: "IEEE Publications, Built AI-hardware prototypes",
+    experience: "2+ years"
+  },
+  {
+    id: 2,
+    name: "Mohammed Faseed",
+    role: "web & cyber defense",
+    specialization: "AI/ML, Cybersecurity, Network Engineering",
+    avatar: "./images/faseed_1.jpg",
+    projects: [
+      "5G Real-time Surveillance",
+      "LaserDrop (Li-Fi File Transfer)",
+      "Sign Language Recognition "
+    ],
+    achievements: "Winner of multiple hackathons, Active in OS dev (Raw Lemon)",
+    experience: "2+ years"
+  },
+  {
+    id: 3,
+    name: "Mohammed Shaban",
+    role: "Front-End & Creative Developer",
+    specialization: "React.js, UI/UX, Design Systems, Video Editing",
+    avatar: "./images/shaban_1.jpg",
+    projects: [
+      "Interactive 3D Web Apps",
+      "Design-driven Dashboards",
+      "High-impact Visual Presentations"
+    ],
+    achievements: "Delivered 30+ real-world projects, Expert in design & editing",
+    experience: "2+ years"
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 relative overflow-hidden">
@@ -324,7 +334,7 @@ const MembersPage = () => {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes grid-move {
           0% {
             transform: translate(0, 0);
