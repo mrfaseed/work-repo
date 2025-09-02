@@ -18,38 +18,35 @@ const MembersPage = () => {
   const members = [
     {
       id: 1,
-      name: "Dr. jegathesaan",
+      name: "Jegathesaan",
       role: "Lead AI Researcher",
-      specialization: "Machine Learning & Neural Networks",
-      avatar: "C:THE HYBIXwork-repomembrs.assetslogo-fianl.jpg",
-      projects: ["AI-Powered Analytics Platform", "Neural Network Visualizer"],
+      specialization: "Machine Learning ",
+      avatar: "./images/jega_1.jpg",
+      projects: ["AI-Powered Analytics", "Neural Network Visualizer"],
       achievements: "Published 40+ papers, IEEE Fellow",
-      experience: "8 years",
-      location: "San Francisco, CA",
+      experience: "8 years"
     },
     {
       id: 2,
-      name: "Basith",
+      name: "Mohammed Faseed",
       role: "chatGPT lover",
       specialization: "AI & Language Models",
       avatar:
-        "C:THE HYBIXwork-repomembrs.assetslogo-fianl.jpg",
+        "./images/faseed_1.jpg",
       projects: ["Blockchain Identity System", "Quantum Computing Simulator"],
       achievements: "100 + hackathons",
-      experience: "6 years",
-      location: "dhubai, omen",
+      experience: "6 years"
     },
     {
       id: 3,
-      name: "shabanu",
+      name: "Mohammed shaban",
       role: " Tech Ethusiast",
-      specialization: "most lasy guy",
+      specialization: "React.js, Three.js",
       avatar:
-        "C:THE HYBIXwork-repomembrs.assetslogo-fianl.jpg",
+        "./images/shaban_1.jpg",
       projects: ["Quantum Computing Simulator", "Climate Prediction Model"],
-      achievements: "AAA collage computiations",
-      experience: "12 years",
-      location: "dhubai, omen",
+      achievements: "Real-time projects",
+      experience: "12 years"
     },
    
   ];
@@ -57,19 +54,21 @@ const MembersPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-950 relative overflow-hidden">
       {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-            linear-gradient(rgba(25, 38, 59, 0.85) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(3, 8, 16, 0.75) 1px, transparent 1px)
-          `,
-            backgroundSize: "50px 50px",
-            animation: "grid-move 20s linear infinite",
-          }}
-        ></div>
-      </div>
+  <div className="absolute inset-0">
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(25, 38, 59, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(3, 8, 16, 0.3) 1px, transparent 1px)
+      `,
+      backgroundSize: "50px 50px",
+      animation: "grid-move 20s linear infinite",
+      backgroundColor: "transparent", // ensures no solid background
+    }}
+  ></div>
+</div>
+
 
            {/* Hero Section */}
       <div className="relative z-10 px-8 py-16">
@@ -232,11 +231,7 @@ const MembersPage = () => {
                   </div>
 
                   {/* Location Tag */}
-                  <div className="absolute top-4 right-4 bg-slate-800/60 backdrop-blur-sm px-3 py-1 rounded-full border border-blue-400/30">
-                    <p className="text-blue-200 text-xs font-medium">
-                      {member.location}
-                    </p>
-                  </div>
+                
 
                   {/* 3D Shine Effect */}
                   <div
