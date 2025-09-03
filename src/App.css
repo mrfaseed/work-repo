@@ -4,3 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+.logo-container {
+  width: 800px; 
+  /* Or use max-width for responsiveness */
+  /* max-width: 90%; */
+  margin: 0 auto; /* Center the container */
+}
