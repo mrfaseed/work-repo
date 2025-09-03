@@ -92,120 +92,116 @@ const Footer = () => {
     };
 
     const drawBike = () => {
-        const bikeColor = '#374151';
-        ctx.fillStyle = bikeColor;
-        ctx.strokeStyle = bikeColor;
-        ctx.lineWidth = 2;
+      const bikeColor = '#374151';
+      ctx.fillStyle = bikeColor;
+      ctx.strokeStyle = bikeColor;
+      ctx.lineWidth = 2;
 
-        const scale = 0.5;
+      const scale = 0.5;
 
-        ctx.save();
-        ctx.translate(bikeState.x, bikeState.y);
+      ctx.save();
+      ctx.translate(bikeState.x, bikeState.y);
 
-        // Rear Wheel
-        ctx.beginPath();
-        ctx.arc(-15 * scale, 5 * scale, 7 * scale, 0, Math.PI * 2);
-        ctx.fill();
+      // Rear Wheel
+      ctx.beginPath();
+      ctx.arc(-15 * scale, 5 * scale, 7 * scale, 0, Math.PI * 2);
+      ctx.fill();
 
-        // Front Wheel
-        ctx.beginPath();
-        ctx.arc(15 * scale, 5 * scale, 7 * scale, 0, Math.PI * 2);
-        ctx.fill();
+      // Front Wheel
+      ctx.beginPath();
+      ctx.arc(15 * scale, 5 * scale, 7 * scale, 0, Math.PI * 2);
+      ctx.fill();
 
-        // Body
-        ctx.beginPath();
-        ctx.moveTo(-15 * scale, 5 * scale);
-        ctx.lineTo(5 * scale, -10 * scale);
-        ctx.lineTo(15 * scale, -10 * scale);
-        ctx.lineTo(20 * scale, 0 * scale);
-        ctx.lineTo(-10 * scale, 0 * scale);
-        ctx.closePath();
-        ctx.fill();
+      // Body
+      ctx.beginPath();
+      ctx.moveTo(-15 * scale, 5 * scale);
+      ctx.lineTo(5 * scale, -10 * scale);
+      ctx.lineTo(15 * scale, -10 * scale);
+      ctx.lineTo(20 * scale, 0 * scale);
+      ctx.lineTo(-10 * scale, 0 * scale);
+      ctx.closePath();
+      ctx.fill();
 
-        // Seat
-        ctx.beginPath();
-        ctx.moveTo(-5 * scale, -10 * scale);
-        ctx.lineTo(5 * scale, -10 * scale);
-        ctx.lineTo(0 * scale, -15 * scale);
-        ctx.closePath();
-        ctx.fill();
+      // Seat
+      ctx.beginPath();
+      ctx.moveTo(-5 * scale, -10 * scale);
+      ctx.lineTo(5 * scale, -10 * scale);
+      ctx.lineTo(0 * scale, -15 * scale);
+      ctx.closePath();
+      ctx.fill();
 
-        // Handlebars
-        ctx.beginPath();
-        ctx.moveTo(10 * scale, -10 * scale);
-        ctx.lineTo(15 * scale, -20 * scale);
-        ctx.stroke();
+      // Handlebars
+      ctx.beginPath();
+      ctx.moveTo(10 * scale, -10 * scale);
+      ctx.lineTo(15 * scale, -20 * scale);
+      ctx.stroke();
 
-        ctx.restore();
+      ctx.restore();
     };
-    
+
     // Function to draw scene elements (houses and trees)
     const drawSceneElements = () => {
-        const combinedY = (x) => {
-            let y = 0;
-            hills.forEach((h) => {
-                y += h.amplitude * Math.sin(h.frequency * x + h.offset + time * 0.005);
-            });
-            return y;
-        };
-
-        sceneElements.forEach(el => {
-            let currentX = el.x - (time * bikeState.speed * 0.5);
-            
-            if (currentX < -el.width) {
-                currentX += canvas.width + el.width;
-            }
-
-            ctx.save();
-            ctx.translate(currentX, canvas.height - 50 + combinedY(currentX));
-            
-            if (el.type === 'tree') {
-                const trunkColor = '#5c3a2f';
-                const leafColor = '#1e4620';
-                
-                // Trunk
-                ctx.fillStyle = trunkColor;
-                ctx.fillRect(-2, -el.size * 2, 4, el.size * 2);
-                
-                // Leaves
-                ctx.fillStyle = leafColor;
-                ctx.beginPath();
-                ctx.moveTo(0, -el.size * 2);
-                ctx.lineTo(-el.size, -el.size * 1);
-                ctx.lineTo(el.size, -el.size * 1);
-                ctx.closePath();
-                ctx.fill();
-            } else if (el.type === 'house') {
-                const wallColor = '#a8a8a8';
-                const roofColor = '#808080';
-                const windowColor = '#e0e0e0';
-
-                const houseWidth = 20;
-                const houseHeight = 15;
-                const roofHeight = 10;
-                
-                // Walls
-                ctx.fillStyle = wallColor;
-                ctx.fillRect(-houseWidth / 2, -houseHeight, houseWidth, houseHeight);
-                
-                // Roof
-                ctx.fillStyle = roofColor;
-                ctx.beginPath();
-                ctx.moveTo(-houseWidth / 2, -houseHeight);
-                ctx.lineTo(0, -houseHeight - roofHeight);
-                ctx.lineTo(houseWidth / 2, -houseHeight);
-                ctx.closePath();
-                ctx.fill();
-                
-                // Window
-                ctx.fillStyle = windowColor;
-                ctx.fillRect(-houseWidth / 4, -houseHeight + 5, houseWidth / 4, houseHeight / 4);
-            }
-            ctx.restore();
+      const combinedY = (x) => {
+        let y = 0;
+        hills.forEach((h) => {
+          y += h.amplitude * Math.sin(h.frequency * x + h.offset + time * 0.005);
         });
+        return y;
+      };
+
+      sceneElements.forEach(el => {
+        el.x -= bikeState.speed * 0.5;
+
+        if (el.x < -el.width) {
+          el.x += canvas.width + el.width + (Math.random() * 50);
+          el.type = Math.random() < 0.5 ? 'tree' : 'house';
+          el.size = Math.random() * 10 + (el.type === 'tree' ? 10 : 15);
+        }
+
+        ctx.save();
+        ctx.translate(el.x, canvas.height - 50 + combinedY(el.x));
+        
+        if (el.type === 'tree') {
+          const trunkColor = '#5c3a2f';
+          const leafColor = '#1e4620';
+          
+          ctx.fillStyle = trunkColor;
+          ctx.fillRect(-2, -el.size * 2, 4, el.size * 2);
+          
+          ctx.fillStyle = leafColor;
+          ctx.beginPath();
+          ctx.moveTo(0, -el.size * 2);
+          ctx.lineTo(-el.size, -el.size * 1);
+          ctx.lineTo(el.size, -el.size * 1);
+          ctx.closePath();
+          ctx.fill();
+        } else if (el.type === 'house') {
+          const wallColor = '#a8a8a8';
+          const roofColor = '#808080';
+          const windowColor = '#e0e0e0';
+
+          const houseWidth = 20;
+          const houseHeight = 15;
+          const roofHeight = 10;
+          
+          ctx.fillStyle = wallColor;
+          ctx.fillRect(-houseWidth / 2, -houseHeight, houseWidth, houseHeight);
+          
+          ctx.fillStyle = roofColor;
+          ctx.beginPath();
+          ctx.moveTo(-houseWidth / 2, -houseHeight);
+          ctx.lineTo(0, -houseHeight - roofHeight);
+          ctx.lineTo(houseWidth / 2, -houseHeight);
+          ctx.closePath();
+          ctx.fill();
+          
+          ctx.fillStyle = windowColor;
+          ctx.fillRect(-houseWidth / 4, -houseHeight + 5, houseWidth / 4, houseHeight / 4);
+        }
+        ctx.restore();
+      });
     };
 
-    // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       time++;
@@ -250,9 +246,9 @@ const Footer = () => {
         for (let i = 0; i < numElements; i++) {
           const x = i * 150 + (Math.random() - 0.5) * 50;
           if (Math.random() < 0.5) {
-              sceneElements.push({ type: 'tree', x: x, size: Math.random() * 10 + 10, width: 40 });
+            sceneElements.push({ type: 'tree', x: x, size: Math.random() * 10 + 10, width: 40 });
           } else {
-              sceneElements.push({ type: 'house', x: x, size: Math.random() * 10 + 15, width: 40 });
+            sceneElements.push({ type: 'house', x: x, size: Math.random() * 10 + 15, width: 40 });
           }
         }
       }
@@ -275,14 +271,6 @@ const Footer = () => {
         <p className="text-lg md:text-xl max-w-2xl text-gray-700">
           Join our community and follow the path to adventure. Get ready to explore the world full of codes.
         </p>
-        <div className="mt-8 flex gap-4">
-          <button className="bg-[#045464] text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            Contact Us
-          </button>
-          <button className="bg-transparent border border-[#045464] text-[#045464] font-bold py-3 px-6 rounded-full hover:bg-[#04889c] hover:text-white transition-all duration-300 transform hover:scale-105">
-            About
-          </button>
-        </div>
       </div>
       <canvas ref={canvasRef} className="h-[20vh]"></canvas>
     </footer>
@@ -294,46 +282,100 @@ const App = () => {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #1f2937;
-            overflow-x: hidden;
+          font-family: 'Inter', sans-serif;
+          background-color: #ffffff;
+          color: #1f2937;
+          overflow-x: hidden;
         }
         .footer-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ffffff;
+          height: 50vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #ffffff;
         }
         .content-area {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: left;
-            align-items: center;
-            width: 100%;
-            padding: 2rem;
-            text-align: center;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: left;
+          align-items: center;
+          width: 100%;
+          padding: 2rem;
+          text-align: center;
         }
         canvas {
-            display: block;
-            width: 100%;
-            height: 20vh;
+          display: block;
+          width: 100%;
+          height: 20vh;
         }
         .main-text {
-            color: #1f2937;
+          color: #1f2937;
         }
       `}</style>
+
       <div className="bg-white">
-        <main className="w-full flex items-left justify-center p-4">
-        </main>
+        <main className="w-full flex items-left justify-center p-4"></main>
+
+        {/* First show Footer text part */}
         <Footer />
-      </div>
+
+        {/* Then show links/footer section */}
+        <div className="bg-[#f0f2f5] py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
+              <div>
+                <a href="#" className="font-semibold text-lg flex items-center mb-4 ">
+                  <img
+                    src="../../favicon/favicon.png"
+                    alt="hybix"
+                    className="h-16 w-32 padding:2px"
+                  />
+                </a>
+                <p className="text-gray-500 mb-2">Copyright ©</p>
+                <p className="text-gray-500">uwu?</p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-4">Hybix</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Quick Start</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Describing the UI</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Adding Interactivity</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Managing State</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Escape Hatches</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-4">Why Hybix?</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Speacialization</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Projects</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-4">Community</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Code of Conduct</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Meet the Team</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Acknowledgements</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-4">More</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Blog</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Privacy</a></li>
+                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Terms</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
     </>
   );
 };
