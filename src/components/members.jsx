@@ -70,7 +70,7 @@ const members = [
       "High-impact Visual Presentations"
     ],
     achievements: "Delivered 30+ real-world projects, Expert in design & editing",
-    experience: "2+ years"
+    experience: "1+ years"
   }
 ];
 
