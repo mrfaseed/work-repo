@@ -57,6 +57,20 @@ const members = [
     ],
     achievements: "Delivered 30+ real-world projects, Expert in design & editing",
     experience: "2+ years"
+  },
+  {
+    id: 4,
+    name: "Mohammed Arfan Fariq",
+    role: "Designer, color Speacialist",
+    specialization: "Color theory, Pattern Recognizer",
+    avatar: "",
+    projects: [
+      "Creative Designs",
+      "Logo Designing for clients",
+      "High-impact Visual Presentations"
+    ],
+    achievements: "Delivered 30+ real-world projects, Expert in design & editing",
+    experience: "2+ years"
   }
 ];
 
