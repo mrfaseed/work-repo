@@ -16,6 +16,7 @@ const auroraSpread = keyframes`
 const cosmicAuroraColors = [
   '#27003b', '#4a007b', '#8b1da8', '#c729d1',
   '#f050f0', '#f050a8', '#f05050', '#f0a850',
+    
   '#f0f050', '#a8f050', '#05ffa1', '#01cdfe',
 ];
 

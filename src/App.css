@@ -1,12 +1,8 @@
+/* In your app.css file */
+
 #root {
-  max-width: 1280px;
+  max-width: 100%; /* Change this */
+  padding: 0;       /* Change this */
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
-}
-.logo-container {
-  width: 800px; 
-  /* Or use max-width for responsiveness */
-  /* max-width: 90%; */
-  margin: 0 auto; /* Center the container */
 }
