@@ -64,7 +64,7 @@ const members = [
     name: "Mohammed Arfan Fariq",
     role: "Designer, color Speacialist",
     specialization: "Color theory, Pattern Recognizer",
-    avatar: "./images/arfan_1.jpg",
+    avatar: "./images/arfan_2.jpg",
     projects: [
       "Creative Designs",
       "Logo Designing for clients",

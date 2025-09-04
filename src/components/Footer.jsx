@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 //import "./footer.css";
-import GitHubIcon from '@mui/icons-material/GitHub';
+
 const Footer = () => {
   const canvasRef = useRef(null);
 

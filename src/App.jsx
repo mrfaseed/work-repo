@@ -33,12 +33,7 @@ export default function App() {
           <Navbar />
 
            <div className="flex-grow flex items-center justify-center logo-container">
-               <AuroraGradientLogo 
-       width="800px" 
-        angle={60}
-        speed={10}
-        style={{ maxWidth: '1200px', margin: '0 auto' }}
-      />
+               <AuroraGradientLogo width="800px" />
            </div>
         </div>
       </section>
