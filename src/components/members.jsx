@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, Award, Code, Briefcase } from "lucide-react";
 import './members.css';
+
 const MembersPage = () => {
   const [hoveredMember, setHoveredMember] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -63,7 +64,7 @@ const members = [
     name: "Mohammed Arfan Fariq",
     role: "Designer, color Speacialist",
     specialization: "Color theory, Pattern Recognizer",
-    avatar: "",
+    avatar: "./images/arfan_1.jpg",
     projects: [
       "Creative Designs",
       "Logo Designing for clients",
