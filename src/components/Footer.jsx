@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 //import "./footer.css";
+import GitHubIcon from '@mui/icons-material/GitHub';
 const Footer = () => {
   const canvasRef = useRef(null);
 
@@ -327,18 +328,17 @@ const App = () => {
         <div className="bg-[#f0f2f5] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
-<div className="flex flex-col items-start">
-  <a href="#" className="mb-2">
-    <img
-      src="/images/logo-final.png"
-      alt="hybix"
-      className="h-32 w-auto"  // 8rem tall, auto width
-    />
-  </a>
-  <p className="text-gray-500">Copyright © 2025</p>
-  <p className="text-gray-500">uwu?</p>
-</div>
-
+              <div className="flex flex-col items-start">
+               <a href="#" className="mb-2">
+                <img
+                  src="/images/logo-final.png"
+                  alt="hybix"
+                  className="h-32 w-auto block"  // block removes inline spacing
+                />
+               </a>
+               <p className="text-gray-500">Copyright © 2025</p>
+               <p className="text-gray-500">uwu?</p>
+              </div>
               <div>
                 <h3 className="font-semibold text-lg mb-4">Hybix</h3>
                 <ul className="space-y-2">
@@ -354,6 +354,15 @@ const App = () => {
                 <ul className="space-y-2">
                   <li><a href="#" className="text-gray-600 hover:text-gray-900">Speacialization</a></li>
                   <li><a href="#" className="text-gray-600 hover:text-gray-900">Projects</a></li>
+                  <br />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-4">More</h3>
+                    <ul className="space-y-2">
+                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Blog</a></li>
+                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Privacy</a></li>
+                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Terms</a></li>
+                   </ul>
+                  </div>
                 </ul>
               </div>
               <div>
@@ -364,14 +373,25 @@ const App = () => {
                   <li><a href="#" className="text-gray-600 hover:text-gray-900">Acknowledgements</a></li>
                 </ul>
               </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-4">More</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Blog</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Privacy</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Terms</a></li>
-                </ul>
-              </div>
+              <div className="md:col-span-2"> {/* Use md:col-span-2 for a wider column on medium screens and up */}
+               <h3 className="font-semibold text-lg mb-4">Subscribe to Hybix</h3>
+               <p className="text-gray-600 mb-4">
+                Join our newsletter to stay updated on the latest news and features.
+               </p>
+               <form className="flex">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-grow p-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                 />
+                 <button
+                  type="submit"
+                  className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300"
+                 > 
+                  Subscribe
+                 </button>
+               </form>
+             </div>
             </div>
           </div>
         </div>
