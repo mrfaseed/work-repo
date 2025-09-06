@@ -4,5 +4,6 @@
   max-width: 100%; /* Change this */
   padding: 0;       /* Change this */
   margin: 0 auto;
+  background-color: white !important;
   text-align: center;
 }

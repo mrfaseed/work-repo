@@ -16,9 +16,10 @@ const auroraSpread = keyframes`
 const cosmicAuroraColors = [
   '#27003b', '#4a007b', '#8b1da8', '#c729d1',
   '#f050f0', '#f050a8', '#f05050', '#f0a850',
-    
+
   '#f0f050', '#a8f050', '#05ffa1', '#01cdfe',
 ];
+
 
 // The styled container that holds the animation and mask
 const StyledLogoContainer = styled.div`
@@ -35,8 +36,8 @@ const StyledLogoContainer = styled.div`
   animation: ${auroraSpread} 18s ease-in-out infinite;
 
   /* Use the provided SVG as a mask to clip the animated background */
-  mask-image: ${(props) => props.maskUrl};
-  -webkit-mask-image: ${(props) => props.maskUrl};
+  mask-image: ${(props) => props.maskurl};
+  -webkit-mask-image: ${(props) => props.maskurl};
   mask-size: contain;
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
@@ -64,7 +65,7 @@ export default function AuroraGradientLogo({ width = '100%', height = 'auto', ..
   `;
 
   const encodedSvg = encodeURIComponent(svgMarkup);
-  const maskUrl = `url("data:image/svg+xml;charset=UTF-8,${encodedSvg}")`;
+  const maskurl = `url("data:image/svg+xml;charset=UTF-8,${encodedSvg}")`;
 
   const containerStyle = {
     width,
@@ -72,5 +73,5 @@ export default function AuroraGradientLogo({ width = '100%', height = 'auto', ..
     aspectRatio: '982.737 / 250.736',
   };
 
-  return <StyledLogoContainer style={containerStyle} maskUrl={maskUrl} {...rest} />;
+  return <StyledLogoContainer style={containerStyle} maskurl={maskurl} {...rest} />;
 }

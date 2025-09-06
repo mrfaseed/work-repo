@@ -1,69 +1,87 @@
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Animation from "./components/Animation";
-import Content from "./components/Content";
-import './App.css';
+import "./App.css";
 import AuroraGradientLogo from "./components/AuroraGradientLogo";
-import MembersPage from "./components/members";
-import LogoLoop from "./components/LogoLoop";
-import Footer from './components/Footer'
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
-
-const techLogos = [
-  { node: <SiReact className="text-black" />, title: "React", href: "https://react.dev" },
-  { node: <SiNextdotjs className="text-black" />, title: "Next.js", href: "https://nextjs.org" },
-  { node: <SiTypescript className="text-black" />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-  { node: <SiTailwindcss className="text-black" />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-];
-
-// Optional image logos (if you want to use images instead of icons)
-const imageLogos = [
-  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
-];
+import Footer from "./components/Footer";
+import DarkModeToggle from "./components/DarkModeToggle";
+import LightRays from "./components/LightRays";
 
 export default function App() {
+  const [showToggle, setShowToggle] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Initialize theme safely
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) return savedTheme;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDark ? "dark" : "light";
+  });
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowToggle(true), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
   return (
-    <div className="bg-white-900">
-      
-      <section className="relative h-screen overflow-hidden">
-      
-
-        <div className="relative z-10 flex flex-col h-full">
-          <Navbar />
-
-           <div className="flex-grow flex items-center justify-center logo-container">
-               <AuroraGradientLogo width="800px" />
-           </div>
-        </div>
-      </section>
-
-    
-      <Animation />
-      <Navbar/>
-      {/* 
-      <Content />
-      */}
-      <MembersPage />
-
-     
-      <section className="py-12">
-        <div className="max-w-6xl mx-auto">
-          <LogoLoop
-            logos={techLogos}
-            speed={120}
-            direction="left"
-            logoHeight={48}
-            gap={40}
-            pauseOnHover
-            scaleOnHover
-            fadeOut
-            
-            ariaLabel="Technology partners"
+    <div className="relative bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 min-h-screen">
+      {/* Background Light Rays (only for dark mode) */}
+      {theme === "dark" && (
+        <div className="light-rays-container fixed inset-0 z-0">
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#ffffff"
+            raysSpeed={1.5}
+            lightSpread={0.8}
+            rayLength={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
           />
         </div>
-      </section>
-      <Footer />
+      )}
+
+      {/* App content always above background */}
+      <div className="relative z-10">
+        {/* Top Navbar */}
+        <Navbar
+          theme={theme}
+          toggleTheme={toggleTheme}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+
+        {/* Main Section */}
+        <section className="relative h-screen overflow-hidden flex flex-col items-center justify-center">
+          <AuroraGradientLogo width="800px" />
+        </section>
+
+        {/* Animation Section */}
+        <Animation />
+
+        {/* Dark Mode Toggle Button → Hide when menu is open */}
+        {showToggle && !isMenuOpen && (
+          <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
+        )}
+
+        {/* Footer */}
+        <Footer theme={theme} />
+      </div>
     </div>
   );
 }

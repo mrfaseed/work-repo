@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Poker Card</title>
+    <style>
+        /* 1. Basic Setup & Centering */
+        :root {
+            /* Variables for mouse tracking */
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+            --rotate-x: 0deg;
+            --rotate-y: 0deg;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #1a1a1a;
+            font-family: 'Times New Roman', Times, serif;
+            /* Apply perspective to the scene for the 3D effect */
+            perspective: 1200px; 
+        }
+
+        /* 2. The Golden Card Styling */
+        .card {
+            width: 300px;
+            height: 420px;
+            position: relative;
+            border-radius: 18px;
+            cursor: pointer;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform-style: preserve-3d;
+            
+            /* The 3D rotation is controlled by JS-updated variables */
+            transform: rotateY(var(--rotate-y)) rotateX(var(--rotate-x));
+            
+            /* Metallic Gold Gradient Background */
+            background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b);
+            
+            /* Inner shadow for depth and border effect */
+            box-shadow: 
+                0 0 0 1px rgba(0, 0, 0, 0.3),
+                inset 0 0 1px rgba(255, 255, 255, 0.5),
+                0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 3. Card Content (Rank & Suit) */
+        .card .rank,
+        .card .suit {
+            position: absolute;
+            font-size: 48px;
+            color: #111;
+            /* Subtle text shadow for an engraved look */
+            text-shadow: 1px 1px 1px rgba(255, 215, 0, 0.3);
+        }
+
+        .card .rank.top { top: 10px; left: 20px; }
+        .card .suit.top { top: 55px; left: 20px; }
+
+        /* Flip the bottom elements */
+        .card .rank.bottom { bottom: 10px; right: 20px; transform: rotate(180deg); }
+        .card .suit.bottom { bottom: 55px; right: 20px; transform: rotate(180deg); }
+
+        .card .suit.middle {
+            font-size: 140px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Add a more pronounced shadow for the central suit */
+            text-shadow: 
+                -1px -1px 0 #b8860b,  
+                 1px -1px 0 #b8860b,
+                -1px  1px 0 #b8860b,
+                 1px  1px 0 #b8860b,
+                 3px 3px 5px rgba(0,0,0,0.5);
+        }
+
+        /* 4. The "NASA Level" Hover Glare Effect */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 18px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+
+            /* The glare is a radial gradient positioned by JS-updated variables */
+            background: radial-gradient(
+                circle at var(--mouse-x) var(--mouse-y),
+                rgba(255, 255, 255, 0.6) 0%,
+                rgba(255, 255, 255, 0) 40%
+            );
+        }
+
+        /* Show glare on hover */
+        .card:hover::before {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <span class="rank top">A</span>
+        <span class="suit top">♠</span>
+        <span class="suit middle">♠</span>
+        <span class="rank bottom">A</span>
+        <span class="suit bottom">♠</span>
+    </div>
+
+    <script>
+        const card = document.querySelector('.card');
+        const cardRect = card.getBoundingClientRect();
+
+        card.addEventListener('mousemove', (e) => {
+            // Get mouse position relative to the card center
+            const x = e.clientX - cardRect.left - cardRect.width / 2;
+            const y = e.clientY - cardRect.top - cardRect.height / 2;
+
+            // Define the max rotation
+            const maxRotate = 20;
+
+            // Calculate rotation values based on mouse position
+            // The further from the center, the more it rotates
+            const rotateY = (x / (cardRect.width / 2)) * maxRotate;
+            const rotateX = (-y / (cardRect.height / 2)) * maxRotate;
+
+            // Get mouse position as a percentage for the glare effect
+            const mouseXPercent = (e.clientX - cardRect.left) / cardRect.width * 100;
+            const mouseYPercent = (e.clientY - cardRect.top) / cardRect.height * 100;
+
+            // Update CSS custom properties
+            card.style.setProperty('--rotate-x', `${rotateX}deg`);
+            card.style.setProperty('--rotate-y', `${rotateY}deg`);
+            card.style.setProperty('--mouse-x', `${mouseXPercent}%`);
+            card.style.setProperty('--mouse-y', `${mouseYPercent}%`);
+        });
+
+        // Reset the card's rotation when the mouse leaves
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--rotate-x', '0deg');
+            card.style.setProperty('--rotate-y', '0deg');
+        });
+    </script>
+
+</body>
+</html>
