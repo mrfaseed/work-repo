@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Golden Poker Card</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: radial-gradient(circle at center, #111, #000);
+      overflow: hidden;
+    }
+
+    .card-container {
+      perspective: 1200px;
+    }
+
+    .card {
+      width: 220px;
+      height: 320px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      backface-visibility: hidden;
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+      overflow: hidden;
+    }
+
+    /* Front - Golden Card */
+    .card-front {
+      background: linear-gradient(135deg, #ffd700, #ffcc00, #ffb700);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      color: black;
+      font-family: "Georgia", serif;
+      text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+      animation: shine 3s infinite linear;
+    }
+
+    /* Back */
+    .card-back {
+      background: repeating-linear-gradient(
+        45deg,
+        #000,
+        #000 10px,
+        #111 10px,
+        #111 20px
+      );
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      color: gold;
+      font-family: Arial, sans-serif;
+      border: 2px solid gold;
+    }
+
+    /* Shine effect */
+    @keyframes shine {
+      0% { background-position: -200px 0; }
+      100% { background-position: 200px 0; }
+    }
+
+    /* Glare overlay */
+    .glare {
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      transform: skewX(-25deg);
+      animation: glare-move 3s infinite;
+    }
+
+    @keyframes glare-move {
+      0% { left: -75%; }
+      100% { left: 125%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        ♠A
+        <div class="glare"></div>
+      </div>
+      <div class="card-face card-back">
+        ★ GOLDEN POKER ★
+      </div>
+    </div>
+  </div>
+</body>
+</html>

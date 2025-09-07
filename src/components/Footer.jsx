@@ -265,10 +265,10 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="footer-container">
+    <footer className="bg-white text-black dark:bg-black text-white">
       <div className="content-area">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text">For New World..</h1>
-        <p className="text-lg md:text-xl max-w-2xl text-gray-700">
+        <p className="text-lg md:text-xl max-w-2xl text-black-700 dark:text-white-800">
           Join our community and follow the path to adventure. Get ready to explore the world full of codes.
         </p>
       </div>
@@ -286,7 +286,7 @@ const App = () => {
 
         body {
           font-family: 'Inter', sans-serif;
-          background-color: #ffffff;
+          background-color: #000000ff;
           color: #1f2937;
           overflow-x: hidden;
         }
@@ -296,7 +296,7 @@ const App = () => {
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-          background-color: #ffffff;
+          background-color: #ffffff; /* light mode default */
         }
         .content-area {
           flex-grow: 1;
@@ -325,73 +325,91 @@ const App = () => {
         <Footer />
 
         {/* Then show links/footer section */}
-        <div className="bg-[#f0f2f5] py-16">
+        <div className="bg-[#f0f2f5] dark:bg-black py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
-              <div className="flex flex-col items-start">
-               <a href="#" className="mb-2">
-                <img
-                  src="/images/logo-final.png"
-                  alt="hybix"
-                  className="h-32 w-auto block"  // block removes inline spacing
-                />
-               </a>
-               <p className="text-gray-500">Copyright © 2025</p>
-               <p className="text-gray-500">uwu?</p>
+            {/* Now 5 equal columns */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm ">
+              
+              {/* Logo + copyright */}
+              <div>
+                <a href="#" className="mb-2">
+                  {/* Light mode logo */}
+                  <img
+                    src="/images/logo-final.png"
+                    alt="hybix"
+                    className="h-32 w-auto block dark:hidden"
+                  />
+                  {/* Dark mode logo */}
+                  <img
+                    src="/images/Darkmode.png"
+                    alt="hybix"
+                    className="h-32 w-auto hidden dark:block"
+                  />
+                </a>
+
+                <p className="text-grey-500 dark:text-white-500">Copyright © 2025</p>
+                <p className="text-black-300 dark:text-grey-300">uwu?</p>
               </div>
+
+              {/* Hybix */}
               <div>
                 <h3 className="font-semibold text-lg mb-4">Hybix</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Quick Start</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Describing the UI</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Adding Interactivity</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Managing State</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Escape Hatches</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Quick Start</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Describing the UI</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Adding Interactivity</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Managing State</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Escape Hatches</a></li>
                 </ul>
               </div>
+
+              {/* Why Hybix */}
               <div>
                 <h3 className="font-semibold text-lg mb-4">Why Hybix?</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Speacialization</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Projects</a></li>
-                  <br />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-4">More</h3>
-                    <ul className="space-y-2">
-                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Blog</a></li>
-                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Privacy</a></li>
-                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Terms</a></li>
-                   </ul>
-                  </div>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Specialization</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Projects</a></li>
                 </ul>
+                <div className="mt-6">
+                  <h3 className="font-semibold text-lg mb-4">More</h3>
+                  <ul className="space-y-2">
+                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Blog</a></li>
+                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Privacy</a></li>
+                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Terms</a></li>
+                  </ul>
+                </div>
               </div>
+
+              {/* Community */}
               <div>
                 <h3 className="font-semibold text-lg mb-4">Community</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Code of Conduct</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Meet the Team</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Acknowledgements</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Code of Conduct</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Meet the Team</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Acknowledgements</a></li>
                 </ul>
               </div>
-              <div className="md:col-span-2"> {/* Use md:col-span-2 for a wider column on medium screens and up */}
-               <h3 className="font-semibold text-lg mb-4">Subscribe to Hybix</h3>
-               <p className="text-gray-600 mb-4">
-                Join our newsletter to stay updated on the latest news and features.
-               </p>
-               <form className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-grow p-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                 />
-                 <button
-                  type="submit"
-                  className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300"
-                 > 
-                  Subscribe
-                 </button>
-               </form>
-             </div>
+
+              {/* Subscribe - separate column */}
+              <div>
+                <h3 className="font-semibold text-lg mb-4">Subscribe to Hybix</h3>
+                <p className="text-black-600  dark:white-400 mb-4">
+                  Join our newsletter to stay updated on the latest news and features.
+                </p>
+                <form className="flex">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-grow p-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
