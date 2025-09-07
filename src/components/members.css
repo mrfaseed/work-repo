@@ -2,3 +2,12 @@
     cursor: default;
 
 }
+.container p{
+    font-family: poppins;
+    font-weight: 400;
+}
+.container h1{
+    font-size: 8rem;
+    font-family: kelvinized;
+    letter-spacing: 10pt;
+}

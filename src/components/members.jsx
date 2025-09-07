@@ -74,17 +74,19 @@ const MembersPage = () => {
   ];
 
   return (
-    <div className="min-h-screen from-slate-900 via-white to-white relative overflow-hidden">
+    <div className="min-h-screen from-slate-900 bg-transparent relative overflow-hidden">
       {/* Hero Section */}
       <div className="relative z-10 px-8 py-16">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-8xl md:text-9xl font-bold text-black dark:text-white mb-8 tracking-tight">
-            Team
-          </h1>
-          <p className="text-xl md:text-2xl font-bold text-black-500 dark:text-white-500 max-w-3xl mx-auto leading-relaxed">
-            Meet the brilliant minds behind HYBIX's groundbreaking innovations.
-            Our diverse team of researchers and engineers from around the globe.
-          </p>
+          <div className="container">
+            <h1 className="text-8xl md:text-9xl font-bold text-black dark:text-white mb-8 tracking-tight">
+              Team
+            </h1>
+            <p className="text-xl md:text-2xl font-light text-black-500 dark:text-white-500 max-w-3xl mx-auto leading-relaxed">
+              Meet the brilliant minds behind HYBIX's groundbreaking innovations.
+              Our diverse team of researchers and engineers from around the globe.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -114,15 +116,12 @@ const MembersPage = () => {
                 <div
                   className="relative backdrop-blur-xl rounded-3xl overflow-hidden border border-blue-400/20 shadow-2xl transform-gpu transition-all duration-500 group-hover:shadow-blue-500/25 group-hover:border-blue-400/40"
                   style={{
-                    background: `linear-gradient(180deg, 
-                      #27003b, #4a007b, #8b1da8, #c729d1, 
-                      #f050f0, #f050a8, #f05050, #f0a850, 
-                      #f0f050, #a8f050, #05ffa1, #01cdfe)`,
+                    background: `linear-gradient(270deg, #00809d )`,
                     backgroundSize: "400% 400%",
                     animation: "cosmic-aurora 10s ease infinite",
                     boxShadow:
                       hoveredMember === member.id
-                        ? "0 25px 50px -12px rgba(233, 20, 31, 1), 0 0 0 1px rgba(255, 0, 0, 1)"
+                        ? "0 25px 50px -12px rgba(13, 145, 226, 1), 0 0 0 1px rgba(80, 16, 207, 1)"
                         : "0 10px 25px -3px rgba(5, 0, 0, 0.7), 0 4px 6px -2px rgba(219, 252, 4, 0.05)",
                   }}
                 >
@@ -137,7 +136,7 @@ const MembersPage = () => {
                     </div>
 
                     <div className="text-center">
-                      <h3 className="text-xl font-bold text-black group-hover:text-white-200 dark:text-white group-hover:text-black transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-black group-hover:text-white-200 dark:text-white transition-colors duration-300">
                         {member.name}
                       </h3>
                       <p className="text-black-300 dark:text-white-300 font-medium mb-2">
@@ -209,11 +208,11 @@ const MembersPage = () => {
       </div>
 
       {/* Floating 3D Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none -z-10">
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-yellow-400/30 rounded-full animate-float"
+            className="absolute w-2 h-2 bg-blue-200 rounded-full animate-float pointer-events-none"
             style={{
               left: `${10 + i * 12}%`,
               top: `${20 + (i % 3) * 30}%`,

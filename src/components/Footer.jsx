@@ -176,9 +176,9 @@ const Footer = () => {
           ctx.closePath();
           ctx.fill();
         } else if (el.type === 'house') {
-          const wallColor = '#a8a8a8';
-          const roofColor = '#808080';
-          const windowColor = '#e0e0e0';
+          const wallColor = '#c6c4c4ff';
+          const roofColor = '#767171ff';
+          const windowColor = '#da2525ff';
 
           const houseWidth = 20;
           const houseHeight = 15;
@@ -265,10 +265,10 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-white text-black dark:bg-black text-white">
+    <footer className="bg-white text-black dark:bg-transparent text-white">
       <div className="content-area">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text">For New World..</h1>
-        <p className="text-lg md:text-xl max-w-2xl text-black-700 dark:text-white-800">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text dark:text-white">For New World..</h1>
+        <p className="text-lg md:text-xl max-w-2xl text-black dark:text-white">
           Join our community and follow the path to adventure. Get ready to explore the world full of codes.
         </p>
       </div>
@@ -318,7 +318,7 @@ const App = () => {
         }
       `}</style>
 
-      <div className="bg-white">
+      <div className="bg-transparent">
         <main className="w-full flex items-left justify-center p-4"></main>
 
         {/* First show Footer text part */}
@@ -348,7 +348,6 @@ const App = () => {
                 </a>
 
                 <p className="text-grey-500 dark:text-white-500">Copyright © 2025</p>
-                <p className="text-black-300 dark:text-grey-300">uwu?</p>
               </div>
 
               {/* Hybix */}
