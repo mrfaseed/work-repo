@@ -399,7 +399,7 @@ const App = () => {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-grow p-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                    className="flex-grow p-2 rounded-l-md border border-gray-300  focus:outline-none focus:ring-2 focus:ring-gray-400"
                   />
                   <button
                     type="submit"
