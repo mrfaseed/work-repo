@@ -326,13 +326,14 @@ const App = () => {
 
         {/* Then show links/footer section */}
         <div className="bg-[#f0f2f5] dark:bg-black py-16">
+      
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Now 5 equal columns */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm ">
-              
+             
               {/* Logo + copyright */}
               <div>
-                <a href="#" className="mb-2">
+                <a href="#" className="mb-4">
                   {/* Light mode logo */}
                   <img
                     src="/images/logo-final.png"
@@ -380,7 +381,7 @@ const App = () => {
               </div>
 
               {/* Community */}
-              <div>
+              <div className="mr-10">
                 <h3 className="font-semibold text-lg mb-4">Community</h3>
                 <ul className="space-y-2">
                   <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Code of Conduct</a></li>
@@ -388,14 +389,15 @@ const App = () => {
                   <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Acknowledgements</a></li>
                 </ul>
               </div>
-
+              
+             
               {/* Subscribe - separate column */}
               <div>
-                <h3 className="font-semibold text-lg mb-4">Subscribe to Hybix</h3>
-                <p className="text-black-600  dark:white-400 mb-4">
+                <h3 className="font-semibold text-lg mb-4 ml-6">Subscribe to Hybix</h3>
+                <p className="text-black-600  dark:white-400 mb-4 ml-5">
                   Join our newsletter to stay updated on the latest news and features.
                 </p>
-                <form className="flex">
+                <form className="flex mr-7">
                   <input
                     type="email"
                     placeholder="Enter your email"
