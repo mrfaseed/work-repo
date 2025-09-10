@@ -176,9 +176,9 @@ const Footer = () => {
           ctx.closePath();
           ctx.fill();
         } else if (el.type === 'house') {
-          const wallColor = '#a8a8a8';
-          const roofColor = '#808080';
-          const windowColor = '#e0e0e0';
+          const wallColor = '#c6c4c4ff';
+          const roofColor = '#767171ff';
+          const windowColor = '#da2525ff';
 
           const houseWidth = 20;
           const houseHeight = 15;
@@ -265,10 +265,11 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="footer-container">
+
+    <footer className="bg-white text-black dark:bg-transparent text-white">
       <div className="content-area">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text">For New World..</h1>
-        <p className="text-lg md:text-xl max-w-2xl text-gray-700">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text dark:text-white">For New World..</h1>
+        <p className="text-lg md:text-xl max-w-2xl text-black dark:text-white">
           Join our community and follow the path to adventure. Get ready to explore the world full of codes.
         </p>
       </div>
@@ -318,7 +319,7 @@ const App = () => {
         }
       `}</style>
 
-      <div className="bg-white">
+      <div className="bg-transparent">
         <main className="w-full flex items-left justify-center p-4"></main>
 
         {/* First show Footer text part */}
@@ -327,17 +328,28 @@ const App = () => {
         {/* Then show links/footer section */}
         <div className="bg-[#f0f2f5] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 text-sm">
-              <div className="flex flex-col items-start">
-               <a href="#" className="mb-2">
-                <img
-                  src="/images/logo-final.png"
-                  alt="hybix"
-                  className="h-32 w-auto block"  // block removes inline spacing
-                />
-               </a>
-               <p className="text-gray-500">Copyright © 2025</p>
-               <p className="text-gray-500">uwu?</p>
+
+            {/* Now 5 equal columns */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm ">
+              
+              {/* Logo + copyright */}
+              <div>
+                <a href="#" className="mb-2">
+                  {/* Light mode logo */}
+                  <img
+                    src="/images/logo-final.png"
+                    alt="hybix"
+                    className="h-32 w-auto block dark:hidden"
+                  />
+                  {/* Dark mode logo */}
+                  <img
+                    src="/images/Darkmode.png"
+                    alt="hybix"
+                    className="h-32 w-auto hidden dark:block"
+                  />
+                </a>
+
+                <p className="text-grey-500 dark:text-white-500">Copyright © 2025</p>
               </div>
               <div>
                 <h3 className="font-semibold text-lg mb-4">Hybix</h3>
