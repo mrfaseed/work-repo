@@ -17,7 +17,7 @@ const MembersPage = () => {
   const members = [
     {
       id: 1,
-      name: "Jegathesaan",
+      name: "Jegatheesan",
       role: "Lead AI & Hardware Engineer",
       specialization: "AI Research, LLMs, Embedded Systems",
       avatar: "./images/jega_1.jpg",
@@ -60,8 +60,8 @@ const MembersPage = () => {
     {
       id: 4,
       name: "Mohammed Arfan Fariq",
-      role: "Designer, Color Specialist",
-      specialization: "Color theory, Pattern Recognizer",
+      role: "Designer, Color Specialist,",
+      specialization: "Color theory, Pattern Recognizer, Data Science",
       avatar: "./images/arfan_2.jpg",
       projects: [
         "Creative Designs",
@@ -70,11 +70,11 @@ const MembersPage = () => {
       ],
       achievements: "Delivered 30+ real-world projects, Expert in design & editing",
       experience: "1+ years",
-    },
+    }
   ];
 
   return (
-    <div className="min-h-screen from-slate-900 bg-transparent relative overflow-hidden">
+    <div className="min-h-screen bg-transparent relative overflow-hidden">
       {/* Hero Section */}
       <div className="relative z-10 px-8 py-16">
         <div className="max-w-7xl mx-auto text-center">
@@ -93,7 +93,7 @@ const MembersPage = () => {
       {/* Members Grid */}
       <div className="relative z-10 px-8 pb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {members.map((member) => (
               <div
                 key={member.id}
@@ -155,13 +155,13 @@ const MembersPage = () => {
                         <div className="text-black-400 font-bold text-lg">
                           {member.experience}
                         </div>
-                        <div className="text-blue-200/70 text-xs">Experience</div>
+                        <div className="text-black-500 text-xs dark:text-white-300 texxt-xs">Experience</div>
                       </div>
                       <div className="group/stat hover:scale-105 transition-transform duration-300">
                         <div className="text-black-400 dark:text-white-400 font-bold text-lg">
                           {member.projects.length}
                         </div>
-                        <div className="text-blue-200/70 text-xs">Projects</div>
+                        <div className="text-black-300 text-xs dark:text-white-300 text-xs">Projects</div>
                       </div>
                     </div>
                   </div>
@@ -176,9 +176,9 @@ const MembersPage = () => {
                       {member.projects.map((project, idx) => (
                         <div
                           key={idx}
-                          className="bg-orange-900/30 backdrop-blur-sm rounded-lg px-3 py-2 border border-black-400 transition-all duration-300 hover:translate-x-2"
+                          className="bg-white-900 backdrop-blur-sm rounded-lg px-3 py-2 border border-black-400 transition-all duration-300 hover:translate-x-2 dark:bg-white-900"
                         >
-                          <p className="text-brown-200 dark:text-white-200 text-sm font-medium">
+                          <p className="text-black dark:text-white text-sm font-medium">
                             {project}
                           </p>
                         </div>

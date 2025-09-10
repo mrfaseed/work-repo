@@ -326,15 +326,15 @@ const App = () => {
         <Footer />
 
         {/* Then show links/footer section */}
-        <div className="bg-[#f0f2f5] py-16">
+        <div className="bg-[#f0f2f5] dark:bg-black py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Now 5 equal columns */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm ">
-              
+             
               {/* Logo + copyright */}
               <div>
-                <a href="#" className="mb-2">
+                <a href="#" className="mb-4">
                   {/* Light mode logo */}
                   <img
                     src="/images/logo-final.png"
@@ -377,6 +377,8 @@ const App = () => {
                   </div>
                 </ul>
               </div>
+
+              {/* Community */}
               <div>
                 <h3 className="font-semibold text-lg mb-4">Community</h3>
                 <ul className="space-y-2">
@@ -385,25 +387,27 @@ const App = () => {
                   <li><a href="#" className="text-gray-600 hover:text-gray-900">Acknowledgements</a></li>
                 </ul>
               </div>
-              <div className="md:col-span-2"> {/* Use md:col-span-2 for a wider column on medium screens and up */}
-               <h3 className="font-semibold text-lg mb-4">Subscribe to Hybix</h3>
-               <p className="text-gray-600 mb-4">
-                Join our newsletter to stay updated on the latest news and features.
-               </p>
-               <form className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-grow p-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
-                 />
-                 <button
-                  type="submit"
-                  className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300"
-                 > 
-                  Subscribe
-                 </button>
-               </form>
-             </div>
+
+              {/* Subscribe - separate column */}
+              <div>
+                <h3 className="font-semibold text-lg mb-4">Subscribe to Hybix</h3>
+                <p className="text-black-600  dark:white-400 mb-4">
+                  Join our newsletter to stay updated on the latest news and features.
+                </p>
+                <form className="flex">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-grow p-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300"
+                  >
+                    Subscribe
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
