@@ -7,7 +7,7 @@ import MembersPage from "./components/members";
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import LightRays from "./components/LightRays";
-
+import Teamuh from "./components/TeamPage";
 export default function App() {
   const [showToggle, setShowToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,10 +80,10 @@ export default function App() {
           <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         )}
         <MembersPage />
-
+<Teamuh />
         {/* Footer */}
         <Footer theme={theme} />
-      </div>
+      </div>v7yg
     </div>
   );
 }
