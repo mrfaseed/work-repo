@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import Animation from "./components/Animation";
 import "./App.css";
 import AuroraGradientLogo from "./components/AuroraGradientLogo";
-import MembersPage from "./components/members";
+import TeamPage from "./components/TeamPage";
+import "./components/TeamPage.css"
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import LightRays from "./components/LightRays";
@@ -79,7 +80,7 @@ export default function App() {
         {showToggle && !isMenuOpen && (
           <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         )}
-        <MembersPage />
+        <TeamPage theme={theme} />
 
         {/* Footer */}
         <Footer theme={theme} />
