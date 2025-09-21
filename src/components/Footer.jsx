@@ -265,6 +265,7 @@ const Footer = () => {
   }, []);
 
   return (
+
     <footer className="bg-white text-black dark:bg-transparent text-white">
       <div className="content-area">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text dark:text-white">For New World..</h1>
@@ -286,7 +287,7 @@ const App = () => {
 
         body {
           font-family: 'Inter', sans-serif;
-          background-color: #000000ff;
+          background-color: #ffffff;
           color: #1f2937;
           overflow-x: hidden;
         }
@@ -296,7 +297,7 @@ const App = () => {
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
-          background-color: #ffffff; /* light mode default */
+          background-color: #ffffff;
         }
         .content-area {
           flex-grow: 1;
@@ -326,8 +327,8 @@ const App = () => {
 
         {/* Then show links/footer section */}
         <div className="bg-[#f0f2f5] dark:bg-black py-16">
-      
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             {/* Now 5 equal columns */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm ">
              
@@ -352,19 +353,25 @@ const App = () => {
               </div>
 
               {/* Hybix */}
-              
+              <div>
+                <h3 className="font-semibold text-lg mb-4">Hybix</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Quick Start</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Describing the UI</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Adding Interactivity</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Managing State</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Escape Hatches</a></li>
+                </ul>
+              </div>
 
               {/* Why Hybix */}
-              <div className="mt-1">
-                <h3 className="font-semibold text-lg  mb-4">Why Hybix?</h3>
+              <div>
+                <h3 className="font-semibold text-lg mb-4">Why Hybix?</h3>
                 <ul className="space-y-2">
                   <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Specialization</a></li>
                   <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Projects</a></li>
                 </ul>
-              </div>
-
-              {/*More */}
-              <div className="mr-10">
+                <div className="mt-6">
                   <h3 className="font-semibold text-lg mb-4">More</h3>
                   <ul className="space-y-2">
                     <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Blog</a></li>
@@ -372,25 +379,25 @@ const App = () => {
                     <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Terms</a></li>
                   </ul>
                 </div>
+              </div>
 
               {/* Community */}
               <div className="mr-10">
-                <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+                <h3 className="font-semibold text-lg mb-4">Community</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Instagram</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">X (Twitter)</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">GitHub</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Code of Conduct</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Meet the Team</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Acknowledgements</a></li>
                 </ul>
               </div>
-              
-             
+
               {/* Subscribe - separate column */}
-              <div className="mr-1">
+              <div>
                 <h3 className="font-semibold text-lg mb-4 ml-6">Subscribe to Hybix</h3>
                 <p className="text-black-600  dark:white-400 mb-4 ml-5">
                   Join our newsletter to stay updated on the latest news and features.
                 </p>
-                <form className="flex mr-3">
+                <form className="flex mr-7">
                   <input
                     type="email"
                     placeholder="Enter your email"
