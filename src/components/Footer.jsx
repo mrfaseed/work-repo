@@ -353,16 +353,7 @@ const App = () => {
               </div>
 
               {/* Hybix */}
-              <div>
-                <h3 className="font-semibold text-lg mb-4">Hybix</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Quick Start</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Describing the UI</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Adding Interactivity</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Managing State</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Escape Hatches</a></li>
-                </ul>
-              </div>
+            
 
               {/* Why Hybix */}
               <div>
@@ -371,7 +362,9 @@ const App = () => {
                   <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Specialization</a></li>
                   <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Projects</a></li>
                 </ul>
-                <div className="mt-6">
+              </div>
+
+               <div className="mb-6">
                   <h3 className="font-semibold text-lg mb-4">More</h3>
                   <ul className="space-y-2">
                     <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Blog</a></li>
@@ -379,15 +372,14 @@ const App = () => {
                     <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Terms</a></li>
                   </ul>
                 </div>
-              </div>
 
               {/* Community */}
               <div className="mr-10">
-                <h3 className="font-semibold text-lg mb-4">Community</h3>
+                <h3 className="font-semibold text-lg mb-4">Contact US</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Code of Conduct</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Meet the Team</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Acknowledgements</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Instagram</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">X (Twitter)</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">GitHub</a></li>
                 </ul>
               </div>
 
