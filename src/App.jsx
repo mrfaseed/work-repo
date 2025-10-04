@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import LightRays from "./components/LightRays";
 import Teamuh from "./components/TeamPage";
+import Contact from "./components/Contact_us";
+import FancyButton from "./components/Button";
 export default function App() {
   const [showToggle, setShowToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,9 +70,23 @@ export default function App() {
         />
 
         {/* Main Section */}
-        <section className="relative h-screen overflow-hidden flex flex-col items-center justify-center">
-          <AuroraGradientLogo width="800px" />
-        </section>
+<section className="relative h-screen overflow-hidden flex flex-col items-center justify-center">
+  <AuroraGradientLogo width="800px" />
+
+  {/* Button absolutely positioned near bottom */}
+  <div className="absolute bottom-24">
+    <FancyButton
+      onClick={() =>
+        document
+          .getElementById("contact")
+          .scrollIntoView({ behavior: "smooth" })
+      }
+    >
+      Contact Us
+    </FancyButton>
+  </div>
+</section>
+
 
         {/* Animation Section */}
         <Animation />
@@ -83,7 +99,7 @@ export default function App() {
 <Teamuh />
         {/* Footer */}
         <Footer theme={theme} />
-      </div>v7yg
+      </div>
     </div>
   );
 }
