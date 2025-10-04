@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-//import "./footer.css";
+import "./footer.css";
 
 const Footer = () => {
   const canvasRef = useRef(null);
@@ -330,7 +330,7 @@ const App = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Now 5 equal columns */}
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm ">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm">
              
               {/* Logo + copyright */}
               <div>

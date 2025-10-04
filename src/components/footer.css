@@ -1,0 +1,10 @@
+.content-area h1{
+    font-family: "kelvinized";
+    font-size: 5rem;
+    letter-spacing: 1px;
+}
+
+.content-area p{
+    font-family: "poppins";
+    font-size: 1.3em;
+}

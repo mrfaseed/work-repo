@@ -1,6 +1,6 @@
 import React from "react";
 import "./service.css"
-import { Code, Cpu, Palette, Film, Image, Smartphone, Wrench } from "lucide-react";
+import { Code, Cpu, Palette, Film, Image, Smartphone, Wrench, Camera} from "lucide-react";
 
 const services = [
   {
@@ -38,6 +38,11 @@ const services = [
     description: "Keep your website updated, secure, and running smoothly.",
     icon: <Wrench className="w-10 h-10 text-gray-600" />,
   },
+  {
+    title: "Photoshop Work",
+    description: "Make your image more attractive and cool looking.",
+    icon: <Camera className="w-10 h-10 text-cyan-300" />
+  },
 ];
 
 const ServicesPage = () => {
@@ -54,11 +59,11 @@ const ServicesPage = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2"
+              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 dark:bg-gray-800"
             >
               <div className="flex justify-center mb-4">{service.icon}</div>
-              <h2 className="text-xl font-bold text-black">{service.title}</h2>
-              <p className="text-black mt-2">{service.description}</p>
+              <h2 className="text-xl font-bold text-black dark:text-white">{service.title}</h2>
+              <p className="text-black mt-2 dark:text-white">{service.description}</p>
             </div>
           ))}
         </div>
