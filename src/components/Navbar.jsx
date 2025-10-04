@@ -69,7 +69,7 @@ export default function Navbar({ theme }) {
                 href="#"
                 className="text-gray-700 dark:text-gray-200 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white transition-all duration-300 px-4 py-2 rounded-full"
               >
-                About
+                Services
               </a>
             </li>
             <li>
@@ -77,7 +77,7 @@ export default function Navbar({ theme }) {
                 href="#"
                 className="text-gray-700 dark:text-gray-200 hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white transition-all duration-300 px-4 py-2 rounded-full"
               >
-                Services
+                Team
               </a>
             </li>
             <li>

@@ -3,13 +3,15 @@ import Navbar from "./components/Navbar";
 import Animation from "./components/Animation";
 import "./App.css";
 import AuroraGradientLogo from "./components/AuroraGradientLogo";
-import Service from "./components/Service"
+import Service from "./components/Service";
 import TeamPage from "./components/TeamPage";
-import "./components/TeamPage.css"
+import "./components/TeamPage.css";
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import LightRays from "./components/LightRays";
+import Home from "./components/HomePage";
 import Teamuh from "./components/TeamPage";
+
 export default function App() {
   const [showToggle, setShowToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,24 +71,13 @@ export default function App() {
           setIsMenuOpen={setIsMenuOpen}
         />
 
-        {/* Main Section */}
-<section className="relative h-screen overflow-hidden flex flex-col items-center justify-center">
-  <AuroraGradientLogo width="800px" />
-
-  {/* Button absolutely positioned near bottom */}
-  <div className="absolute bottom-24">
-    <FancyButton
-      onClick={() =>
-        document
-          .getElementById("contact")
-          .scrollIntoView({ behavior: "smooth" })
-      }
-    >
-      Contact Us
-    </FancyButton>
-  </div>
-</section>
-
+        {/* Main Section - HYBIX Centered with Quote + Buttons below */}
+        <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+          <div className="flex flex-col items-center justify-center text-center">
+            <AuroraGradientLogo width="900px" />
+            <Home />
+          </div>
+        </section>
 
         {/* Animation Section */}
         <Animation />
@@ -95,7 +86,11 @@ export default function App() {
         {showToggle && !isMenuOpen && (
           <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         )}
+
+        {/* Services Section */}
         <Service theme={theme} />
+
+        {/* Team Section */}
         <TeamPage theme={theme} />
 
         {/* Footer */}
