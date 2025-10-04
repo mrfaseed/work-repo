@@ -3,13 +3,13 @@ import Navbar from "./components/Navbar";
 import Animation from "./components/Animation";
 import "./App.css";
 import AuroraGradientLogo from "./components/AuroraGradientLogo";
-import MembersPage from "./components/members";
+import Service from "./components/Service"
+import TeamPage from "./components/TeamPage";
+import "./components/TeamPage.css"
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import LightRays from "./components/LightRays";
 import Teamuh from "./components/TeamPage";
-import Contact from "./components/Contact_us";
-import FancyButton from "./components/Button";
 export default function App() {
   const [showToggle, setShowToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,8 +95,9 @@ export default function App() {
         {showToggle && !isMenuOpen && (
           <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         )}
-        <MembersPage />
-<Teamuh />
+        <Service theme={theme} />
+        <TeamPage theme={theme} />
+
         {/* Footer */}
         <Footer theme={theme} />
       </div>

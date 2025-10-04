@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-//import "./footer.css";
+import "./footer.css";
 
 const Footer = () => {
   const canvasRef = useRef(null);
@@ -330,7 +330,7 @@ const App = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Now 5 equal columns */}
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm ">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm">
              
               {/* Logo + copyright */}
               <div>
@@ -351,50 +351,45 @@ const App = () => {
 
                 <p className="text-grey-500 dark:text-white-500">Copyright © 2025</p>
               </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-4">Hybix</h3>
-                <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Quick Start</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Describing the UI</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Adding Interactivity</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Managing State</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Escape Hatches</a></li>
-                </ul>
-              </div>
+
+              {/* Hybix */}
+            
+
+              {/* Why Hybix */}
               <div>
                 <h3 className="font-semibold text-lg mb-4">Why Hybix?</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Speacialization</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Projects</a></li>
-                  <br />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-4">More</h3>
-                    <ul className="space-y-2">
-                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Blog</a></li>
-                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Privacy</a></li>
-                     <li><a href="#" className="text-gray-600 hover:text-gray-900">Terms</a></li>
-                   </ul>
-                  </div>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Specialization</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Projects</a></li>
                 </ul>
               </div>
 
+               <div className="mb-6">
+                  <h3 className="font-semibold text-lg mb-4">More</h3>
+                  <ul className="space-y-2">
+                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Blog</a></li>
+                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Privacy</a></li>
+                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Terms</a></li>
+                  </ul>
+                </div>
+
               {/* Community */}
-              <div>
-                <h3 className="font-semibold text-lg mb-4">Community</h3>
+              <div className="mr-10">
+                <h3 className="font-semibold text-lg mb-4">Contact US</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Code of Conduct</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Meet the Team</a></li>
-                  <li><a href="#" className="text-gray-600 hover:text-gray-900">Acknowledgements</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Instagram</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">X (Twitter)</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">GitHub</a></li>
                 </ul>
               </div>
 
               {/* Subscribe - separate column */}
               <div>
-                <h3 className="font-semibold text-lg mb-4">Subscribe to Hybix</h3>
-                <p className="text-black-600  dark:white-400 mb-4">
+                <h3 className="font-semibold text-lg mb-4 ml-6">Subscribe to Hybix</h3>
+                <p className="text-black-600  dark:white-400 mb-4 ml-5">
                   Join our newsletter to stay updated on the latest news and features.
                 </p>
-                <form className="flex">
+                <form className="flex mr-7">
                   <input
                     type="email"
                     placeholder="Enter your email"
@@ -402,7 +397,7 @@ const App = () => {
                   />
                   <button
                     type="submit"
-                    className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300"
+                    className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300 dark:bg-white-400 text-black hover:bg-white-300"
                   >
                     Subscribe
                   </button>

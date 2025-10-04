@@ -1,0 +1,10 @@
+.custom h1{
+    font-family: "kelvinized";
+    font-size: 5em;
+    letter-spacing: 1px;
+}
+
+.custom p{
+    font-family: poppins;
+    font-size: 1.1em;
+}
