@@ -1,5 +1,5 @@
 import React from "react";
-import "./Teampage.css"
+import "./TeamPage.css"
 
 const teamData = {
   coreMaintainers: [
