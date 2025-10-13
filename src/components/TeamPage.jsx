@@ -54,11 +54,11 @@ const TeamCard = ({ name, img, github, twitter }) => (
 
 export default function TeamPage() {
   return (
-      <div className="p-10 bg-white min-h-screen bg-transparent dark:bg-transparent">
+      <div className="p-10 bg-white min-h-screen dark:bg-transparent">
         <div className="words">
-          <h1 className="text-[6rem] font-serif font-extrabold text-center mt-20 mb-20 dark:text-white">Team</h1>
+          <h1 className="text-[6rem] font-serif font-extrabold text-center mt-20 dark:text-white">Our Team Members</h1>
 
-          <p className="text-[1.4em] mt-20 dark:text-white"> Meet the brilliant minds behind HYBIX's groundbreaking innovations.
+          <p className="text-[1.4em] mt-10 dark:text-white"> Meet the brilliant minds behind HYBIX's groundbreaking innovations.
                   Our diverse team of researchers and engineers from around the globe.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 mb-12 ml-20 mt-40">
             {teamData.coreMaintainers.map((member, i) => (

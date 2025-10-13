@@ -59,7 +59,7 @@ const ServicesPage = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 dark:bg-gray-800"
+              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl dark:bg-gray-800"
             >
               <div className="flex justify-center mb-4">{service.icon}</div>
               <h2 className="text-xl font-bold text-black dark:text-white">{service.title}</h2>
