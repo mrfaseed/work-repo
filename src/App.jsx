@@ -88,14 +88,23 @@ export default function App() {
         {showToggle && !isMenuOpen && (
           <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         )}
-
+<div className="mb-12">
         {/* Services Section */}
-        <Service theme={theme} />
+        <Service theme={theme}  />
 
+</div>
+<div className="mb-12">
         {/* Team Section */}
         <TeamPage theme={theme} />
 
+</div>
+<div className="mb-12">
+    
         <Projects theme={theme} />
+
+</div>
+       
+
 
         {/* Footer */}
         <Footer theme={theme} />
