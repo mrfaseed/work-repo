@@ -1,5 +1,6 @@
 // src/components/TeamPage.jsx
 import React from "react";
+import "./Teampage.css"
 
 
 const teamData = {
@@ -29,10 +30,10 @@ const teamData = {
 };
 
 const TeamCard = ({ name, role, img, github, instagram }) => (
-  <div className="group relative bg-transparent backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 border border-gray-700/30 hover:border-cyan-400/40">
+  <div className="group relative bg-white backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 border border-black dark:bg-transparent border border-white">
     <div className="flex flex-col items-center text-center space-y-6">
       <div className="relative">
-        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-600 group-hover:border-cyan-400 transition-colors duration-300">
+        <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-600 group-hover:border-gray-400 transition-colors duration-300">
           <img
             src={img}
             alt={name}
@@ -43,10 +44,10 @@ const TeamCard = ({ name, role, img, github, instagram }) => (
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-xl font-semibold text-white group-hover:text-cyan-100 transition-colors duration-300">
+        <h3 className="text-xl font-semibold text-black group-hover:text-gray transition-colors duration-300 dark:text-white group-hover:text-gray transition-colors duration-300">
           {name}
         </h3>
-        <p className="text-cyan-400 font-medium">{role}</p>
+        <p className="text-black font-medium dark:text-white">{role}</p>
       </div>
 
       <div className="flex space-x-4 pt-2">
@@ -54,7 +55,7 @@ const TeamCard = ({ name, role, img, github, instagram }) => (
           href={`https://github.com/${github}`}
           target="_blank"
           rel="noreferrer"
-          className="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110"
+          className="text-gray-400 hover:text-black transition-colors duration-300 transform hover:scale-110"
         >
           <span className="sr-only">GitHub</span>
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -90,13 +91,13 @@ export default function TeamPage() {
       <div className="container mx-auto px-6 py-20">
         <div className="text-center space-y-8 mb-20">
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
               Our Team
             </h1>
-            <div className="w-24 h-1 bg-cyan-500 mx-auto rounded-full"></div>
+            <div className="w-24 h-1"></div>
           </div>
 
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-2xl mx-auto  dark:text-white">
             The brilliant minds behind HYBIX's groundbreaking innovations.
             Our diverse team of researchers and engineers from around the globe.
           </p>
