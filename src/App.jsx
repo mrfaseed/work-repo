@@ -6,6 +6,8 @@ import AuroraGradientLogo from "./components/AuroraGradientLogo";
 import Service from "./components/Service";
 import TeamPage from "./components/TeamPage";
 import "./components/TeamPage.css";
+import Projects from "./components/Projects";
+import "./components/projects.css";
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import LightRays from "./components/LightRays";
@@ -92,6 +94,8 @@ export default function App() {
 
         {/* Team Section */}
         <TeamPage theme={theme} />
+
+        <Projects theme={theme} />
 
         {/* Footer */}
         <Footer theme={theme} />
