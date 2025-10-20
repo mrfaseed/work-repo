@@ -1,14 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 
-// ProjectsPage.jsx
-// - Single-file React component using Tailwind CSS and Framer Motion
-// - Default export: ProjectsPage
-// Installation notes (add to your README):
-// 1) Tailwind CSS must be configured in your app (https://tailwindcss.com/docs/guides/create-react-app or Next.js guide)
-// 2) Install framer-motion: npm install framer-motion
-// 3) Drop this file into your components folder and import where needed
-
 const SAMPLE_PROJECTS = [
   {
     id: 1,
@@ -19,6 +11,8 @@ const SAMPLE_PROJECTS = [
     progress: 100,
     tech: ["React", "Node.js", "WhatsApp API"],
     date: "2025-09-14",
+    link:"#",
+    logo:"./images/editcs2.png"
   },
   {
     id: 2,
@@ -29,6 +23,9 @@ const SAMPLE_PROJECTS = [
     progress: 100,
     tech: ["ESP32", "Python", "InfluxDB"],
     date: "2025-10-01",
+     link:"#",
+     logo: "./images/smartshoe.png"
+
   },
   {
     id: 3,
@@ -39,6 +36,7 @@ const SAMPLE_PROJECTS = [
     progress: 55,
     tech: ["Arduino", "SIM808", "Firebase"],
     date: "2025-10-18",
+    logo:"./images/gps.png"
   },
   {
     id: 4,
@@ -49,6 +47,7 @@ const SAMPLE_PROJECTS = [
     progress: 28,
     tech: ["Python", "ML", "Flask"],
     date: "2025-09-30",
+    logo: "./images/voiceandbreath.png"
   },
   {
     id: 5,
@@ -58,18 +57,29 @@ const SAMPLE_PROJECTS = [
     progress: 100,
     tech: ["Next.js", "Tailwind", "Sanity"],
     date: "2025-08-12",
+    logo:"./images/Darkmode.png"
+  },
+  {
+    id: 6,
+    title: "Website : personal chat app",
+    description: "Engineered a personalized real-time chat platform for client interactions.",
+    status: "completed",
+    progress: 100,
+    tech: ["Next.js", "Tailwind", "firebase"],
+    date: "2025-06-12",
+    logo:"./images/chatapp.png"
   },
 ];
 
 function StatusPill({ status }) {
   const map = {
-    completed: "bg-emerald-100 text-emerald-800",
-    pending: "bg-amber-100 text-amber-800",
+    completed: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
+    pending: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
   };
   return (
     <span
       className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold ${
-        map[status] || "bg-slate-100 text-slate-800"
+        map[status] || "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200"
       }`}
     >
       {status === "completed" ? "Completed" : "Pending"}
@@ -79,9 +89,9 @@ function StatusPill({ status }) {
 
 function ProgressBar({ value }) {
   return (
-    <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+    <div className="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
       <div
-        className="h-2 rounded-full transition-all duration-500"
+        className="h-2 rounded-full transition-all duration-500 bg-indigo-600"
         style={{ width: `${value}%` }}
       />
     </div>
@@ -116,17 +126,18 @@ export default function ProjectsPage() {
   }, [query, filter, sortBy]);
 
   return (
-    <div className="min-h-screen p-6 bg-white dark:bg-transparent">
+    <div className="min-h-screen p-6 bg-white dark:bg-transparent transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-BBH Sans Hegarty">
-            Projects 
+          <h1 className="text-3xl md:text-4xl font-BBH Sans Hegarty text-black dark:text-white">
+            Projects
           </h1>
-          <p className="text-black mt-2 dark:text-white">
+          <p className="text-black mt-2 dark:text-slate-300">
             A curated list of projects we’ve completed and those still in progress.
           </p>
         </header>
 
+        {/* Search and Filters */}
         <section className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div className="flex-1">
             <label className="relative block">
@@ -134,31 +145,43 @@ export default function ProjectsPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search projects, tech, description..."
-                className="w-full pl-4 pr-10 py-2 rounded-lg border border-slate-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 dark:bg-transparent"
+                className="w-full pl-4 pr-10 py-2 rounded-lg border border-slate-200 bg-white text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-200 dark:bg-transparent dark:border-slate-700 dark:text-white"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-black text-sm">
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-black dark:text-white text-sm">
                 🔎
               </span>
             </label>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="inline-flex overflow-hidden rounded-lg border">
+            <div className="inline-flex overflow-hidden rounded-lg border border-slate-200 dark:border-slate-700">
               <button
                 onClick={() => setFilter("all")}
-                className={`px-3 py-1 text-sm ${filter === "all" ? "bg-white  dark:bg-transparent" : "text-black dark:text-white"}`}
+                className={`px-3 py-1 text-sm ${
+                  filter === "all"
+                    ? "bg-white text-black dark:bg-transparent dark:text-white"
+                    : "text-black dark:text-slate-300"
+                }`}
               >
                 All
               </button>
               <button
                 onClick={() => setFilter("completed")}
-                className={`px-3 py-1 text-sm ${filter === "completed" ? "bg-white dark:bg-transparent" : "text-black dark:text-white"}`}
+                className={`px-3 py-1 text-sm ${
+                  filter === "completed"
+                    ? "bg-white text-black dark:bg-transparent dark:text-white"
+                    : "text-black dark:text-slate-300"
+                }`}
               >
                 Completed
               </button>
               <button
                 onClick={() => setFilter("pending")}
-                className={`px-3 py-1 text-sm ${filter === "pending" ? "bg-white dark:bg-transparent" : "text-black dark:text-white"}`}
+                className={`px-3 py-1 text-sm ${
+                  filter === "pending"
+                    ? "bg-white text-black dark:bg-transparent dark:text-white"
+                    : "text-black dark:text-slate-300"
+                }`}
               >
                 Pending
               </button>
@@ -167,7 +190,7 @@ export default function ProjectsPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="rounded-lg border px-3 py-2 bg-white text-black"
+              className="rounded-lg border px-3 py-2 bg-white text-sm"
             >
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
@@ -176,6 +199,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
+        {/* Project Grid */}
         <main>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((p) => (
@@ -183,11 +207,11 @@ export default function ProjectsPage() {
                 key={p.id}
                 layout
                 whileHover={{ y: -6, boxShadow: "0 10px 30px rgba(2,6,23,0.08)" }}
-                className="relative bg-white rounded-2xl p-5 border overflow-hidden dark:bg-transparent"
+                className="relative bg-white rounded-2xl p-5 border overflow-hidden"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white font-bold text-lg dark:bg-transparent text-white border border-white">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 flex items-center justify-center text-white font-bold text-lg">
                       {p.title
                         .split(" ")
                         .map((s) => s[0])
@@ -195,8 +219,8 @@ export default function ProjectsPage() {
                         .join("")}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg text-black dark:text-white bg-transparent">{p.title}</h3>
-                      <p className="text-sm text-black-400 dark:text-white-400">{p.description}</p>
+                      <h3 className="font-semibold text-lg">{p.title}</h3>
+                      <p className="text-sm text-slate-500 mt-1 line-clamp-2">{p.description}</p>
                     </div>
                   </div>
 
@@ -208,7 +232,7 @@ export default function ProjectsPage() {
 
                 <div className="mt-4">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="text-xs text-slate-500 dark:text-slate-100">Progress</div>
+                    <div className="text-xs text-slate-500">Progress</div>
                     <div className="text-xs font-medium">{p.progress}%</div>
                   </div>
                   <ProgressBar value={p.progress} />
@@ -216,7 +240,7 @@ export default function ProjectsPage() {
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
-                    <span key={t} className="text-xs px-2 py-1 rounded-md bg-slate-900 text-white">
+                    <span key={t} className="text-xs px-2 py-1 rounded-md bg-slate-100">
                       {t}
                     </span>
                   ))}
@@ -224,7 +248,7 @@ export default function ProjectsPage() {
 
                 <div className="mt-5 flex items-center justify-between">
                   <button
-                    className="text-sm font-medium py-2 px-3 rounded-lg bg-green-400 ml-20 text-white"
+                    className="text-sm font-medium py-2 px-3 rounded-lg bg-indigo-600 text-white"
                     onClick={() => alert(`Open details for: ${p.title}`)}
                   >
                     View
@@ -236,32 +260,37 @@ export default function ProjectsPage() {
             ))}
 
             {filtered.length === 0 && (
-              <div className="col-span-full p-12 text-center text-slate-700 dark:text-slate-300">
+              <div className="col-span-full p-12 text-center text-slate-500">
                 No projects found. Try a different search or clear filters.
               </div>
             )}
           </div>
 
+          {/* Summary Section */}
           <section className="mt-10">
-            <h2 className="text-xl font-bold mb-4 text-black dark:text-white">Summary</h2>
+            <h2 className="text-xl font-bold mb-4">Summary</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="p-4 bg-white rounded-xl border dark:bg-transparent">
-                <div className="text-sm text-slate-800 dark:text-slate-200">Total Projects</div>
+              <div className="p-4 bg-white rounded-xl border">
+                <div className="text-sm text-slate-500">Total Projects</div>
                 <div className="text-2xl font-extrabold">{SAMPLE_PROJECTS.length}</div>
               </div>
 
-              <div className="p-4 bg-white rounded-xl border dark:bg-transparent">
-                <div className="text-sm text-slate-800 dark:text-slate-200">Completed</div>
+              <div className="p-4 bg-white rounded-xl border">
+                <div className="text-sm text-slate-500">Completed</div>
                 <div className="text-2xl font-extrabold">{SAMPLE_PROJECTS.filter(p=>p.status==='completed').length}</div>
               </div>
 
-              <div className="p-4 bg-white rounded-xl border dark:bg-transparent">
-                <div className="text-sm text-slate-800 dark:text-slate-200">Pending</div>
+              <div className="p-4 bg-white rounded-xl border">
+                <div className="text-sm text-slate-500">Pending</div>
                 <div className="text-2xl font-extrabold">{SAMPLE_PROJECTS.filter(p=>p.status==='pending').length}</div>
               </div>
             </div>
           </section>
         </main>
+
+        <footer className="mt-12 text-center text-sm text-slate-400">
+          The Code Hub — Projects showcase. Customize the sample data in <code>SAMPLE_PROJECTS</code>.
+        </footer>
       </div>
     </div>
   );
