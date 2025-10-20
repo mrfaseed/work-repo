@@ -167,7 +167,7 @@ export default function ProjectsPage() {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="rounded-lg border px-3 py-2 bg-white text-sm"
+              className="rounded-lg border px-3 py-2 bg-white text-black"
             >
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
@@ -183,11 +183,11 @@ export default function ProjectsPage() {
                 key={p.id}
                 layout
                 whileHover={{ y: -6, boxShadow: "0 10px 30px rgba(2,6,23,0.08)" }}
-                className="relative bg-white rounded-2xl p-5 border overflow-hidden"
+                className="relative bg-white rounded-2xl p-5 border overflow-hidden dark:bg-transparent"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-700 flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-12 h-12 rounded-xl bg-black flex items-center justify-center text-white font-bold text-lg dark:bg-transparent text-white border border-white">
                       {p.title
                         .split(" ")
                         .map((s) => s[0])
@@ -195,20 +195,20 @@ export default function ProjectsPage() {
                         .join("")}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg">{p.title}</h3>
-                      <p className="text-sm text-slate-500 mt-1 line-clamp-2">{p.description}</p>
+                      <h3 className="font-semibold text-lg text-black dark:text-white bg-transparent">{p.title}</h3>
+                      <p className="text-sm text-black-400 dark:text-white-400">{p.description}</p>
                     </div>
                   </div>
 
                   <div className="text-right">
                     <StatusPill status={p.status} />
-                    <div className="text-xs text-slate-400 mt-1">{p.date}</div>
+                    <div className="text-xs text-slate-400 mt-1 mr-2">{p.date}</div>
                   </div>
                 </div>
 
                 <div className="mt-4">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="text-xs text-slate-500">Progress</div>
+                    <div className="text-xs text-slate-500 dark:text-slate-100">Progress</div>
                     <div className="text-xs font-medium">{p.progress}%</div>
                   </div>
                   <ProgressBar value={p.progress} />
@@ -216,7 +216,7 @@ export default function ProjectsPage() {
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
-                    <span key={t} className="text-xs px-2 py-1 rounded-md bg-slate-100">
+                    <span key={t} className="text-xs px-2 py-1 rounded-md bg-slate-900 text-white">
                       {t}
                     </span>
                   ))}
@@ -224,7 +224,7 @@ export default function ProjectsPage() {
 
                 <div className="mt-5 flex items-center justify-between">
                   <button
-                    className="text-sm font-medium py-2 px-3 rounded-lg bg-indigo-600 text-white"
+                    className="text-sm font-medium py-2 px-3 rounded-lg bg-green-400 ml-20 text-white"
                     onClick={() => alert(`Open details for: ${p.title}`)}
                   >
                     View
@@ -236,36 +236,32 @@ export default function ProjectsPage() {
             ))}
 
             {filtered.length === 0 && (
-              <div className="col-span-full p-12 text-center text-slate-500">
+              <div className="col-span-full p-12 text-center text-slate-700 dark:text-slate-300">
                 No projects found. Try a different search or clear filters.
               </div>
             )}
           </div>
 
           <section className="mt-10">
-            <h2 className="text-xl font-bold mb-4">Summary</h2>
+            <h2 className="text-xl font-bold mb-4 text-black dark:text-white">Summary</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="p-4 bg-white rounded-xl border">
-                <div className="text-sm text-slate-500">Total Projects</div>
+              <div className="p-4 bg-white rounded-xl border dark:bg-transparent">
+                <div className="text-sm text-slate-800 dark:text-slate-200">Total Projects</div>
                 <div className="text-2xl font-extrabold">{SAMPLE_PROJECTS.length}</div>
               </div>
 
-              <div className="p-4 bg-white rounded-xl border">
-                <div className="text-sm text-slate-500">Completed</div>
+              <div className="p-4 bg-white rounded-xl border dark:bg-transparent">
+                <div className="text-sm text-slate-800 dark:text-slate-200">Completed</div>
                 <div className="text-2xl font-extrabold">{SAMPLE_PROJECTS.filter(p=>p.status==='completed').length}</div>
               </div>
 
-              <div className="p-4 bg-white rounded-xl border">
-                <div className="text-sm text-slate-500">Pending</div>
+              <div className="p-4 bg-white rounded-xl border dark:bg-transparent">
+                <div className="text-sm text-slate-800 dark:text-slate-200">Pending</div>
                 <div className="text-2xl font-extrabold">{SAMPLE_PROJECTS.filter(p=>p.status==='pending').length}</div>
               </div>
             </div>
           </section>
         </main>
-
-        <footer className="mt-12 text-center text-sm text-slate-400">
-          The Code Hub — Projects showcase. Customize the sample data in <code>SAMPLE_PROJECTS</code>.
-        </footer>
       </div>
     </div>
   );

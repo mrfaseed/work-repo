@@ -8,5 +8,10 @@
 
 .mb-8 p{
     font-family: "poppins";
-    font-size: 1.4em;
+    font-size: 1.2em;
+}
+
+.mt-10 h2{
+    font-family: "BBH Sans Hegarty";
+    font-size: 35px;
 }
