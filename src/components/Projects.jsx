@@ -130,7 +130,7 @@ export default function ProjectsPage() {
       <div className="max-w-6xl mx-auto">
         <header className="mb-8">
           <h1 className="text-3xl md:text-4xl font-BBH Sans Hegarty text-black dark:text-white">
-            shaban
+            Projects
           </h1>
           <p className="text-black mt-2 dark:text-slate-300">
             A curated list of projects we’ve completed and those still in progress.
