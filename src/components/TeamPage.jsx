@@ -26,6 +26,13 @@ const teamData = {
       github: "sophialee",
       instagram: "sophia_designs",
     },
+    {
+      name: "MOHAMED ARFAN FARIQ F",
+      role: "Assistant developer",
+      img: "../images/arfan_2.jpg",
+      github: "faq-swax",
+      instagram: "swax_dev",
+    },
   ],
 };
 
