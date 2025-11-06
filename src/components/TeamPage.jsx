@@ -31,8 +31,9 @@ const teamData = {
       role: "Assistant developer",
       img: "../images/arfan_2.jpg",
       github: "faq-swax",
-      instagram: "swax_dev",
+      instagram: "swax_faq",
     },
+    
   ],
 };
 
