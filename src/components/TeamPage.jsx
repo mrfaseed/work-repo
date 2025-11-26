@@ -15,7 +15,7 @@ const teamData = {
     {
       name: "Jegatheesan",
       role: "Project Manager",
-      img:"../images/jega_1.jpg",
+      img: "../images/jega_1.jpg",
       github: "davidk",
       instagram: "david_pm",
     },
@@ -26,11 +26,19 @@ const teamData = {
       github: "sophialee",
       instagram: "sophia_designs",
     },
+    {
+      name: "MOHAMED ARFAN FARIQ F",
+      role: "Assistant developer",
+      img: "../images/arfan_2.jpg",
+      github: "faq-swax",
+      instagram: "swax_faq",
+    },
+
   ],
 };
 
 const TeamCard = ({ name, role, img, github, instagram }) => (
-  <div className="group relative bg-white backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 border border-black dark:bg-transparent border border-white">
+  <div className="group relative bg-white backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 transform hover:scale-105 border border-black border-white">
     <div className="flex flex-col items-center text-center space-y-6">
       <div className="relative">
         <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-gray-600 group-hover:border-gray-400 transition-colors duration-300">
@@ -44,10 +52,10 @@ const TeamCard = ({ name, role, img, github, instagram }) => (
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-xl font-semibold text-black group-hover:text-gray transition-colors duration-300 dark:text-white group-hover:text-gray transition-colors duration-300">
+        <h3 className="text-xl font-semibold text-black group-hover:text-gray transition-colors duration-300 group-hover:text-gray transition-colors duration-300">
           {name}
         </h3>
-        <p className="text-black font-medium dark:text-white">{role}</p>
+        <p className="text-black font-medium">{role}</p>
       </div>
 
       <div className="flex space-x-4 pt-2">
@@ -63,22 +71,22 @@ const TeamCard = ({ name, role, img, github, instagram }) => (
           </svg>
         </a>
 
-     <a
-  href={`https://instagram.com/${instagram}`}
-  target="_blank"
-  rel="noreferrer"
-  className="text-gray-400 hover:text-pink-500 transition-colors duration-300 transform hover:scale-110"
->
-  <span className="sr-only">Instagram</span>
-  <svg
-    className="w-6 h-6"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
-  </svg>
-</a>
+        <a
+          href={`https://instagram.com/${instagram}`}
+          target="_blank"
+          rel="noreferrer"
+          className="text-gray-400 hover:text-pink-500 transition-colors duration-300 transform hover:scale-110"
+        >
+          <span className="sr-only">Instagram</span>
+          <svg
+            className="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
+          </svg>
+        </a>
 
       </div>
     </div>
@@ -91,13 +99,13 @@ export default function TeamPage() {
       <div className="container mx-auto px-6 py-20">
         <div className="text-center space-y-8 mb-20">
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-6xl font-bold text-black dark:text-white">
+            <h1 className="text-5xl md:text-6xl font-bold text-black">
               Our Team
             </h1>
             <div className="w-24 h-1"></div>
           </div>
 
-          <p className="text-xl text-black max-w-2xl mx-auto  dark:text-white">
+          <p className="text-xl text-black max-w-2xl mx-auto">
             The brilliant minds behind HYBIX's groundbreaking innovations.
             Our diverse team of researchers and engineers from around the globe.
           </p>

@@ -160,7 +160,7 @@ function ContactButton({ onOpen }) {
     <div className="rounded-3xl p-[2px] bg-gradient-to-r from-[#ff5f6d] via-[#ffb26b] to-[#f7ff00] inline-block shadow-xl">
       <button
         onClick={onOpen}
-        className="bg-white dark:bg-gray-900 px-8 py-4 rounded-3xl font-semibold flex items-center gap-3 shadow-md hover:scale-[1.01] transition-transform focus:outline-none focus:ring-4 focus:ring-indigo-200"
+        className="bg-white px-8 py-4 rounded-3xl font-semibold flex items-center gap-3 shadow-md hover:scale-[1.01] transition-transform focus:outline-none focus:ring-4 focus:ring-indigo-200"
         aria-haspopup="dialog"
       >
         <svg

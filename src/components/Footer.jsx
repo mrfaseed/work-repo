@@ -160,14 +160,14 @@ const Footer = () => {
 
         ctx.save();
         ctx.translate(el.x, canvas.height - 50 + combinedY(el.x));
-        
+
         if (el.type === 'tree') {
           const trunkColor = '#5c3a2f';
           const leafColor = '#1e4620';
-          
+
           ctx.fillStyle = trunkColor;
           ctx.fillRect(-2, -el.size * 2, 4, el.size * 2);
-          
+
           ctx.fillStyle = leafColor;
           ctx.beginPath();
           ctx.moveTo(0, -el.size * 2);
@@ -183,10 +183,10 @@ const Footer = () => {
           const houseWidth = 20;
           const houseHeight = 15;
           const roofHeight = 10;
-          
+
           ctx.fillStyle = wallColor;
           ctx.fillRect(-houseWidth / 2, -houseHeight, houseWidth, houseHeight);
-          
+
           ctx.fillStyle = roofColor;
           ctx.beginPath();
           ctx.moveTo(-houseWidth / 2, -houseHeight);
@@ -194,7 +194,7 @@ const Footer = () => {
           ctx.lineTo(houseWidth / 2, -houseHeight);
           ctx.closePath();
           ctx.fill();
-          
+
           ctx.fillStyle = windowColor;
           ctx.fillRect(-houseWidth / 4, -houseHeight + 5, houseWidth / 4, houseHeight / 4);
         }
@@ -240,7 +240,7 @@ const Footer = () => {
         canvasRef.current.height = window.innerHeight * 0.2;
         generateHills();
         bikeState.x = 0;
-        
+
         sceneElements = [];
         const numElements = Math.floor(canvas.width / 150);
         for (let i = 0; i < numElements; i++) {
@@ -266,10 +266,10 @@ const Footer = () => {
 
   return (
 
-    <footer className="bg-white text-black dark:bg-transparent text-white">
+    <footer className="bg-white text-black text-white">
       <div className="content-area">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text dark:text-white">For New World..</h1>
-        <p className="text-lg md:text-xl max-w-2xl text-black dark:text-white">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 main-text">For New World..</h1>
+        <p className="text-lg md:text-xl max-w-2xl text-black">
           Join our community and follow the path to adventure. Get ready to explore the world full of codes.
         </p>
       </div>
@@ -326,12 +326,12 @@ const App = () => {
         <Footer />
 
         {/* Then show links/footer section */}
-        <div className="bg-[#f0f2f5] dark:bg-black py-16">
+        <div className="bg-[#f0f2f5] py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Now 5 equal columns */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-16 text-sm">
-             
+
               {/* Logo + copyright */}
               <div>
                 <a href="#" className="mb-4">
@@ -339,61 +339,55 @@ const App = () => {
                   <img
                     src="/images/logo-final.png"
                     alt="hybix"
-                    className="h-32 w-auto block dark:hidden"
-                  />
-                  {/* Dark mode logo */}
-                  <img
-                    src="/images/Darkmode.png"
-                    alt="hybix"
-                    className="h-32 w-auto hidden dark:block"
+                    className="h-32 w-auto block"
                   />
                 </a>
 
-                <p className="text-grey-500 dark:text-white-500">Copyright © 2025</p>
+                <p className="text-grey-500">Copyright © 2025</p>
               </div>
 
               {/* Hybix */}
-            
+
 
               {/* Why Hybix */}
               <div>
                 <h3 className="font-semibold text-lg mb-4">Why Hybix?</h3>
                 <ul className="space-y-2">
-<li>
-  <a
-    href="/services?access=hybix-specialization"
-    className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500 transition-all duration-300"
-  >
-    Specialization
-  </a>
-</li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Projects</a></li>
+                  <li>
+                    <a
+                      href="/services?access=hybix-specialization"
+                      className="text-black-600 hover:text-gray-300 hover:text-gray-500 transition-all duration-300"
+                    >
+                      Specialization
+                    </a>
+                  </li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 hover:text-gray-500">Projects</a></li>
                 </ul>
               </div>
 
-               <div className="mb-6">
-                  <h3 className="font-semibold text-lg mb-4">More</h3>
-                  <ul className="space-y-2">
-                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Blog</a></li>
-                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Privacy</a></li>
-                    <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Terms</a></li>
-                  </ul>
-                </div>
+              <div className="mb-6">
+                <h3 className="font-semibold text-lg mb-4">More</h3>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 hover:text-gray-500">Blog</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 hover:text-gray-500">Privacy</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 hover:text-gray-500">Terms</a></li>
+                </ul>
+              </div>
 
               {/* Community */}
               <div className="mr-10">
                 <h3 className="font-semibold text-lg mb-4">Contact US</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Instagram</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">X (Twitter)</a></li>
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">GitHub</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 hover:text-gray-500">Instagram</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 hover:text-gray-500">X (Twitter)</a></li>
+                  <li><a href="#" className="text-black-600 hover:text-gray-300 hover:text-gray-500">GitHub</a></li>
                 </ul>
               </div>
 
               {/* Subscribe - separate column */}
               <div>
                 <h3 className="font-semibold text-lg mb-4 ml-6">Subscribe to Hybix</h3>
-                <p className="text-black-600  dark:white-400 mb-4 ml-5">
+                <p className="text-black-600 mb-4 ml-5">
                   Join our newsletter to stay updated on the latest news and features.
                 </p>
                 <form className="flex mr-7">
@@ -404,7 +398,7 @@ const App = () => {
                   />
                   <button
                     type="submit"
-                    className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300 dark:bg-white-400 text-black hover:bg-white-300"
+                    className="bg-gray-800 text-white p-2 rounded-r-md hover:bg-gray-700 transition duration-300 text-black hover:bg-white-300"
                   >
                     Subscribe
                   </button>
@@ -413,7 +407,7 @@ const App = () => {
             </div>
           </div>
         </div>
-      </div>  
+      </div>
     </>
   );
 };

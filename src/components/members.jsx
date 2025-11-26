@@ -79,10 +79,10 @@ const MembersPage = () => {
       <div className="relative z-10 px-8 py-16">
         <div className="max-w-7xl mx-auto text-center">
           <div className="container">
-            <h1 className="text-8xl md:text-9xl font-bold text-black dark:text-white mb-8 tracking-tight">
+            <h1 className="text-8xl md:text-9xl font-bold text-black mb-8 tracking-tight">
               Team
             </h1>
-            <p className="text-xl md:text-2xl font-light text-black-500 dark:text-white-500 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl font-light text-black-500 max-w-3xl mx-auto leading-relaxed">
               Meet the brilliant minds behind HYBIX's groundbreaking innovations.
               Our diverse team of researchers and engineers from around the globe.
             </p>

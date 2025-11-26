@@ -9,11 +9,10 @@ export default function FancyButton({ children, onClick }) {
         relative isolate inline-flex items-center justify-center
         px-8 py-3 text-lg font-bold text-neutral-800 rounded-xl 
         overflow-hidden transition-transform duration-300 ease-in-out 
-        active:scale-95 dark:text-neutral-200
+        active:scale-95
 
         before:content-[''] before:absolute before:inset-0.5 
         before:rounded-[10px] before:z-[-2] before:bg-neutral-50 
-        before:dark:bg-gray-800
         
         after:content-[''] after:absolute after:-inset-1 
         after:rounded-xl after:z-[-3] after:blur-md 

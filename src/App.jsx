@@ -10,41 +10,11 @@ import "./components/TeamPage.css";
 import Projects from "./components/Projects";
 import "./components/projects.css";
 import Footer from "./components/Footer";
-import DarkModeToggle from "./components/DarkModeToggle";
-import LightRays from "./components/LightRays";
 import Home from "./components/HomePage";
-import Teamuh from "./components/TeamPage";
 import Specialization from "./components/SecretServices"; // import your SecretServices component
 
 function AppContent() {
-  const [showToggle, setShowToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Initialize theme safely
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) return savedTheme;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    return prefersDark ? "dark" : "light";
-  });
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowToggle(true), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -56,30 +26,11 @@ function AppContent() {
   };
 
   return (
-    <div className="relative bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 min-h-screen">
-      {/* Background Light Rays (only for dark mode) */}
-      {theme === "dark" && (
-        <div className="light-rays-container fixed inset-0 z-0">
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#ffffff"
-            raysSpeed={1.5}
-            lightSpread={0.8}
-            rayLength={1.2}
-            followMouse={true}
-            mouseInfluence={0.1}
-            noiseAmount={0.1}
-            distortion={0.05}
-          />
-        </div>
-      )}
-
+    <div className="relative bg-white text-black transition-colors duration-300 min-h-screen">
       {/* App content always above background */}
       <div className="relative z-10">
         {/* Top Navbar */}
         <Navbar
-          theme={theme}
-          toggleTheme={toggleTheme}
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
         />
@@ -97,22 +48,17 @@ function AppContent() {
         {/* Animation Section */}
         <Animation />
 
-        {/* Dark Mode Toggle Button → Hide when menu is open */}
-        {showToggle && !isMenuOpen && (
-          <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
-        )}
-
         <div className="mb-12">
           {/* Services Section */}
-          {location.pathname === "/" && <Service theme={theme} />}
+          {location.pathname === "/" && <Service />}
         </div>
         <div className="mb-12">
           {/* Team Section */}
-          {location.pathname === "/" && <TeamPage theme={theme} />}
+          {location.pathname === "/" && <TeamPage />}
         </div>
         <div className="mb-12">
           {/* Projects Section */}
-          {location.pathname === "/" && <Projects theme={theme} />}
+          {location.pathname === "/" && <Projects />}
         </div>
 
         {/* Secret Services Section */}
@@ -121,7 +67,7 @@ function AppContent() {
         )}
 
         {/* Footer */}
-        <Footer theme={theme} />
+        <Footer />
       </div>
     </div>
   );

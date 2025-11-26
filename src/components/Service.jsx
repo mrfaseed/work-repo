@@ -1,6 +1,6 @@
 import React from "react";
 import "./service.css"
-import { Code, Cpu, Palette, Film, Image, Smartphone, Wrench, Camera} from "lucide-react";
+import { Code, Cpu, Palette, Film, Image, Smartphone, Wrench, Camera } from "lucide-react";
 
 const services = [
   {
@@ -47,28 +47,28 @@ const services = [
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen bg-white py-12 px-6 dark:bg-transparent">
-     <div className="custom">
-      <div className="max-w-6xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4 dark:text-white">Our Services</h1>
-        <p className="text-lg text-black mb-12 mt-12 dark:text-white">
-          We provide a wide range of creative and technical services to help your business grow.
-        </p>
+    <div className="min-h-screen bg-white py-12 px-6">
+      <div className="custom">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl font-bold text-gray-800 mb-4">Our Services</h1>
+          <p className="text-lg text-black mb-12 mt-12">
+            We provide a wide range of creative and technical services to help your business grow.
+          </p>
 
-        <div className="grid gap-8 sm:grid-cols-5 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl dark:bg-gray-800"
-            >
-              <div className="flex justify-center mb-4">{service.icon}</div>
-              <h2 className="text-xl font-bold text-black dark:text-white">{service.title}</h2>
-              <p className="text-black mt-2 dark:text-white">{service.description}</p>
-            </div>
-          ))}
+          <div className="grid gap-8 sm:grid-cols-5 lg:grid-cols-3">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl"
+              >
+                <div className="flex justify-center mb-4">{service.icon}</div>
+                <h2 className="text-xl font-bold text-black">{service.title}</h2>
+                <p className="text-black mt-2">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-     </div>
     </div>
   );
 };

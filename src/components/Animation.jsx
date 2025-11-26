@@ -77,7 +77,7 @@ export default function Animation() {
 
   return (
     <>
-      <div ref={animBoxRef} id="animBox" className="fixed inset-0 flex items-center justify-center bg-black z-50"></div>
+      <div ref={animBoxRef} id="animBox" className="fixed inset-0 flex items-center justify-center bg-white z-50"></div>
       <div ref={contentRef} id="content" className="opacity-0 transition-opacity duration-700">
         {/* Children get rendered here */}
       </div>

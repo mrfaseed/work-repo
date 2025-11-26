@@ -10,20 +10,16 @@ export default function HomePage() {
     bg-white text-black border-2 border-black
     hover:bg-black hover:text-white hover:scale-105 
     focus:ring-gray-300
-
-    dark:bg-black dark:text-white dark:border-white
-    dark:hover:bg-white dark:hover:text-black 
-    dark:focus:ring-gray-800
   `;
 
   return (
     <div className="flex flex-col items-center justify-center text-center mt-16">
       <BlurText
         text="Empowering innovation through intelligent IT solutions."
-        className="mt-4 text-lg font-medium text-gray-700 dark:text-gray-300"
+        className="mt-4 text-lg font-medium text-gray-700"
         animateBy="words"        // or "letters" for individual letter animation
-        direction="top"   
-               // or "bottom"
+        direction="top"
+        // or "bottom"
         delay={200}              // delay between each word
       />
 

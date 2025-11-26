@@ -49,7 +49,7 @@ export default function Hamburger({ setIsOpen }) {
   };
 
   const containerClasses = `
-    fixed inset-0 w-full h-screen bg-white/70 dark:bg-gray-900/80 backdrop-blur-md z-[999999]
+    fixed inset-0 w-full h-screen bg-white/70 backdrop-blur-md z-[999999]
     flex flex-col md:flex-row items-center
     p-8 md:p-16
     hamburger-container
@@ -63,7 +63,7 @@ export default function Hamburger({ setIsOpen }) {
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="absolute top-6 right-6 text-5xl md:text-6xl font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300"
+          className="absolute top-6 right-6 text-5xl md:text-6xl font-bold text-black hover:text-gray-600"
           aria-label="Close menu"
         >
           ✕
@@ -73,25 +73,25 @@ export default function Hamburger({ setIsOpen }) {
         <div className="w-full md:w-1/2 flex flex-col md:items-start gap-8 md:gap-10 text-center md:text-left">
           <a
             href="/blog"
-            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 leading-none"
+            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-black hover:text-gray-600 leading-none"
           >
             BLOG
           </a>
           <a
             href="/contact"
-            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 leading-none"
+            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-black hover:text-gray-600 leading-none"
           >
             CONTACT
           </a>
           <a
             href="/faq"
-            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 leading-none"
+            className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-black hover:text-gray-600 leading-none"
           >
             FAQ
           </a>
           <a
             href="#"
-            className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 leading-none whitespace-nowrap"
+            className="mt-6 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black hover:text-gray-600 leading-none whitespace-nowrap"
           >
             REQUEST A CALL
           </a>
