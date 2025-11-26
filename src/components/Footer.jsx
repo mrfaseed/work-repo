@@ -359,7 +359,14 @@ const App = () => {
               <div>
                 <h3 className="font-semibold text-lg mb-4">Why Hybix?</h3>
                 <ul className="space-y-2">
-                  <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Specialization</a></li>
+<li>
+  <a
+    href="/services?access=hybix-specialization"
+    className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500 transition-all duration-300"
+  >
+    Specialization
+  </a>
+</li>
                   <li><a href="#" className="text-black-600 hover:text-gray-300 dark:text-white-600 hover:text-gray-500">Projects</a></li>
                 </ul>
               </div>

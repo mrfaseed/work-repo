@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Animation from "./components/Animation";
 import "./App.css";
@@ -13,8 +14,9 @@ import DarkModeToggle from "./components/DarkModeToggle";
 import LightRays from "./components/LightRays";
 import Home from "./components/HomePage";
 import Teamuh from "./components/TeamPage";
+import Specialization from "./components/SecretServices"; // import your SecretServices component
 
-export default function App() {
+function AppContent() {
   const [showToggle, setShowToggle] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -43,6 +45,15 @@ export default function App() {
 
   const toggleTheme = () =>
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Handle query param navigation
+  const handleSpecializationClick = (e) => {
+    e.preventDefault();
+    navigate("/services?access=hybix-specialization");
+  };
 
   return (
     <div className="relative bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 min-h-screen">
@@ -74,12 +85,14 @@ export default function App() {
         />
 
         {/* Main Section - HYBIX Centered with Quote + Buttons below */}
-        <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-          <div className="flex flex-col items-center justify-center text-center">
-            <AuroraGradientLogo width="900px" />
-            <Home />
-          </div>
-        </section>
+        {location.pathname === "/" && (
+          <section className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
+            <div className="flex flex-col items-center justify-center text-center">
+              <AuroraGradientLogo width="900px" />
+              <Home />
+            </div>
+          </section>
+        )}
 
         {/* Animation Section */}
         <Animation />
@@ -88,27 +101,38 @@ export default function App() {
         {showToggle && !isMenuOpen && (
           <DarkModeToggle theme={theme} toggleTheme={toggleTheme} />
         )}
-<div className="mb-12">
-        {/* Services Section */}
-        <Service theme={theme}  />
 
-</div>
-<div className="mb-12">
-        {/* Team Section */}
-        <TeamPage theme={theme} />
+        <div className="mb-12">
+          {/* Services Section */}
+          {location.pathname === "/" && <Service theme={theme} />}
+        </div>
+        <div className="mb-12">
+          {/* Team Section */}
+          {location.pathname === "/" && <TeamPage theme={theme} />}
+        </div>
+        <div className="mb-12">
+          {/* Projects Section */}
+          {location.pathname === "/" && <Projects theme={theme} />}
+        </div>
 
-</div>
-<div className="mb-12">
-    
-        <Projects theme={theme} />
-
-</div>
-       
-
+        {/* Secret Services Section */}
+        {location.pathname === "/services" && (
+          <Specialization />
+        )}
 
         {/* Footer */}
         <Footer theme={theme} />
       </div>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/*" element={<AppContent />} />
+      </Routes>
+    </Router>
   );
 }
